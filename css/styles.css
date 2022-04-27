@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*!
+* Start Bootstrap - Shop Homepage v5.0.5 (https://startbootstrap.com/template/shop-homepage)
+* Copyright 2013-2022 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
+*/
+/*!
+ */
+
+@font-face {
+    font-family: 'Bad Boys';
+    src: url('../fonts/BadBoys.woff2') format('woff2'),
+        url('../fonts/BadBoys.woff') format('woff');
+}
+
+* {
+    font-family: 'Bad Boys';
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 1;
+}
+
+
+.nav-link:hover, i:hover, a:hover, .fit-div:hover, .carousel-item:hover{
+    text-decoration: overline;
+    opacity: 80%;
+
+}
+
+.fit-div{
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% center;
+    overflow: hidden;
+}
+
+.fit-div.card-img{
+    height: 100%;
+}
+
+.fit-div.card-img-top{
+    max-height: 300px;
+}
+
+.product{
+    max-height: 600px;
+}
+
+.card, .card-img{
+    border: 0px;
+    border-radius: 0%;
+}
+
+.card a{
+    opacity: 100%;
+    color: black;
+}
+.card:hover *{
+    text-decoration: overline;
+    opacity: 80%;
+}
+/*.product-img{
+
+}*/
