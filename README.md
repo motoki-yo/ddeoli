@@ -58,4 +58,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id metus varius, 
 
 ## Comentários
 
-[Mockups](https://www.figma.com/file/SeyNRpdqZnJg8Dt9hJMbHp/Mockups---alexanderwang-inspired) das telas do sistema
+[Mockups](https://www.figma.com/file/SeyNRpdqZnJg8Dt9hJMbHp/Mockups---alexanderwang-inspired?node-id=0%3A1) das telas do sistema
