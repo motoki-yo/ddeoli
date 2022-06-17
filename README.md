@@ -14,6 +14,7 @@ Projeto para a matéria **SSC0219 - Introdução ao desenvolvimento web**.
 
 ## Membros
 
+- Lourenço de Salles Roselino | NUSP 11796805
 - Melissa Motoki Nogueira | NUSP 5588687
 
 ## Requisitos
@@ -56,4 +57,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id metus varius, 
 
 ## Comentários
 
-Mockups(desenho) das telas do sistema, e o diagrama de navegação podem ser acessados no link: https://www.figma.com/file/pKx61zKzwN7EaB5D3i80yj/ddeoli?node-id=4%3A3
+[Mockups](https://www.figma.com/file/SeyNRpdqZnJg8Dt9hJMbHp/Mockups---alexanderwang-inspired) das telas do sistema
