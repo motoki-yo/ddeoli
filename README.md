@@ -14,9 +14,9 @@ Projeto para a matéria **SSC0219 - Introdução ao desenvolvimento web**.
 
 ## Membros
 
+- Beatriz Aparecida Diniz | NUSP 11925430
 - Lourenço de Salles Roselino | NUSP 11796805
 - Melissa Motoki Nogueira | NUSP 5588687
-- Beatriz Aparecida Diniz | NUSP 11925430
 
 ## Requisitos
 
