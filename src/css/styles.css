@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/*!
+* Start Bootstrap - Shop Homepage v5.0.5 (https://startbootstrap.com/template/shop-homepage)
+* Copyright 2013-2022 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
+*/
+/*!
+ */
+
+@font-face {
+    font-family: 'Bad Boys';
+    src: url('../fonts/BadBoys.woff2') format('woff2'),
+        url('../fonts/BadBoys.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Eurostile Extended';
+    src: url('../fonts/EurostileExtended-Black.woff2') format('woff2'),
+        url('../fonts/EurostileExtended-Black.woff') format('woff');
+    /*font-weight: bold;
+    font-style: normal;
+    font-display: swap;*/
+}
+
+/*@font-face {
+    font-family: 'Karma Regular';
+    font-sty    le: normal;
+    font-weight: normal;
+    src: local('Karma Regular'), url('../fonts/Karma-Regular.woff') format('woff');
+    }
+
+
+@font-face {
+font-family: 'Karma Light';
+font-style: normal;
+font-weight: normal;
+src: local('Karma Light'), url('../fonts/Karma-Light.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Karma Medium';
+font-style: normal;
+font-weight: normal;
+src: local('Karma Medium'), url('../fonts/Karma-Medium.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Karma SemiBold';
+font-style: normal;
+font-weight: normal;
+src: local('Karma SemiBold'), url('../fonts/Karma-SemiBold.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Karma Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Karma Bold'), url('../fonts/Karma-Bold.woff') format('woff');
+}*/
+
+body {
+    font-family: 'Eurostile Extended';
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 2;
+} 
+
+.navbar, footer{
+    font-family: 'Bad Boys';
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1;
+}
+
+
+.nav-link:hover, i:hover, a:hover, .fit-div:hover, .carousel-item:hover{
+    text-decoration: overline;
+    opacity: 80%;
+    cursor: pointer;
+
+}
+
+.fit-div{
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% center;
+    overflow: hidden;
+}
+
+.fit-div.card-img{
+    height: 100%;
+}
+
+.fit-div.card-img-top{
+    max-height: 300px;
+}
+
+.product{
+    max-height: 600px;
+}
+
+.card, .card-img{
+    border: 0px;
+    border-radius: 0%;
+}
+
+.card a{
+    opacity: 100%;
+    color: black;
+}
+.card:hover *{
+    text-decoration: overline;
+    opacity: 80%;
+}
+/*.product-img{
+
+}*/
