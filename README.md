@@ -4,8 +4,8 @@
 <head>
 </head>
 <body>
-<p align="center"><img src="src/img/ddeoli.svg" background-color:"white"/></p>
-<p align="center"><img src="src/assets/favicon.svg" background-color:"white"/></p>
+<p align="center"><img src="git-resources/ddeoli.svg" background-color:"white"/></p>
+<p align="center"><img src="git-resources/favicon.svg" background-color:"white"/></p>
 </body>
 </html>
 
@@ -40,7 +40,7 @@ O nome _ddeoli(떨이)_ é uma palavra da língua coreana. O termo refere-se aos
 
 
 ## Estrutura (Diagrama de Navegação)
-![Screenshot](Sitemap.png)
+![Screenshot](git-resources/Sitemap.png)
 
 ## Plano de teste
 
