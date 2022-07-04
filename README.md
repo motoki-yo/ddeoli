@@ -4,7 +4,6 @@
 <head>
 </head>
 <body>
-<p align="center"><img src="git-resources/ddeoli.svg" background-color:"white"/></p>
 <p align="center"><img src="git-resources/favicon.svg" background-color:"white"/></p>
 </body>
 </html>
