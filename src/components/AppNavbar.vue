@@ -19,9 +19,17 @@
             </div>
 
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
-              <div class="site-top-icons">
-                <ul>
-                  <li class="has-child"><a href="/profile"><span class="icon icon-person"></span></a></li>
+              <div class="site-navbar site-navigation site-top-icons">
+                <ul class="site-menu ">
+                  <li class="has-children">
+                    <a href="/profile"><span class="icon icon-person"></span></a>
+                    <ul class="dropdown">
+                      <!-- Add filters later on -->
+                      <li><a href="/shop-all">Collection One</a></li>
+                      <li><a href="/shop-all">Collection Two</a></li>
+                      <li><a href="/shop-all">Collection Three</a></li>
+                    </ul>
+                  </li>
                   <li>
                     <a href="/cart" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>

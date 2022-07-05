@@ -158,16 +158,16 @@ a {
   .site-navbar .site-logo a {
     text-transform: uppercase;
     color: #25262a;
-    letter-spacing: .2em;
-    font-size: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    letter-spacing: .1em;
+    font-size: 1em;
+    padding: 5px;
     border: 2px solid #25262a; }
     .site-navbar .site-logo a:hover {
       text-decoration: none; }
   .site-navbar a {
     color: #868995; }
     .site-navbar a:hover {
+      opacity: 75%;
       color: #3d3f45; }
   .site-navbar .icon {
     font-size: 20px; }

@@ -145,7 +145,7 @@
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Spring 2018
+									Winter 2022
 								</span>
 							</div>
 
@@ -170,7 +170,7 @@
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Spring 2018
+									Winter 2022
 								</span>
 							</div>
 
@@ -195,7 +195,7 @@
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Spring 2018
+									Winter 2022
 								</span>
 							</div>
 
