@@ -23,6 +23,9 @@ import UserCards from '@/views/UserCards'
 import AppLogin from '@/views/AppLogin.vue'
 import AppRegister from '@/views/AppRegister.vue'
 
+import AdmInfo from '@/views/AdmInfo.vue'
+import manageProducts from '@/views/Products.vue'
+import AdmEdit from '@/views/AdmEdit'
 
 const routes = [
     {
@@ -94,6 +97,21 @@ const routes = [
       path: '/adresses',
       name: "UserAdresses",
       component: UserAdresses,
+    },
+    {
+      path: '/admInfo',
+      name: "AdmInfo",
+      component: AdmInfo,
+    },
+    {
+      path: '/admEdit',
+      name: "AdmEdit",
+      component: AdmEdit,
+    },
+    {
+      path: '/manageProducts',
+      name: "manageProducts",
+      component: manageProducts,
     },
     {
       path: '/:catchAll(.*)*',

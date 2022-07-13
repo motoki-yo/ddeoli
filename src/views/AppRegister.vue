@@ -7,31 +7,31 @@
                 <br>
                 <p style="font-size: 11px; margin-top: -10px">join our community. just fill in the form below and enjoy an even smoother shopping experience.</p>
             
-            <form id="app" class="container-fluid" v-on:submit.prevent="validate">
+            <form class="container-fluid">
                 <div class = "divLabel">
                     <label>First Name</label>
-                    <div class="invalid" v-if="validation.invalid.firstName">{{ validation.invalid.firstName }}</div>
+                    <div class="invalid"></div>
                 </div>
                 <div>
                     
-                    <input type="text" id="firstName" placeholder="" v-model="firstName" name="First Name" class="textLogin"/>
+                    <input type="text" id="firstName" placeholder="" name="First Name" class="textLogin"/>
                     
                 </div>
 
                 <div class = "divLabel">
                     <label>Last Name</label>
-                    <div class="invalid" v-if="validation.invalid.lastName">{{ validation.invalid.lastName }}</div>
+                    <div class="invalid" ></div>
                 </div>
                 <div>
-                    <input type="text" id="lastName" placeholder="" v-model="lastName" name="Last Name" class="textLogin"/>
+                    <input type="text" id="lastName" placeholder="" name="Last Name" class="textLogin"/>
                 </div>
 
                 <div class = "divLabel">
                     <label>Email</label>
-                    <div class="invalid" v-if="validation.invalid.email">{{ validation.invalid.email }}</div>
+                    <div class="invalid"></div>
                 </div>
                 <div>
-                    <input type="text" id="email" placeholder="" v-model="email" name="email" class="textLogin"/>
+                    <input type="text" id="email" placeholder="" name="email" class="textLogin"/>
                 </div>
 
                 <div class = "divLabel">
@@ -43,19 +43,19 @@
 
                 <div class = "divLabel">
                     <label>Password</label>
-                    <div class="invalid" v-if="validation.invalid.password">{{ validation.invalid.password }}</div>
+                    <div class="invalid"></div>
                 </div>
                 <div class="col-login">
-                    <input type="password" id="password" placeholder="" v-model="password" name="password" class="textLogin inputPassword">
+                    <input type="password" id="password" placeholder="" name="password" class="textLogin inputPassword">
                     <div id="passwordContain"></div>
                 </div>
 
                 <div class = "divLabel">
                     <label>Confirm Password</label>
-                    <div class="invalid" v-if="validation.invalid.repeatPassword">{{ validation.invalid.repeatPassword }}</div>
+                    <div class="invalid"></div>
                 </div>
                 <div class="col-login">
-                    <input type="password" id="repeatPassword" placeholder="" v-model="repeatPassword" name="password" class="textLogin inputPassword">
+                    <input type="password" id="repeatPassword" placeholder="" name="password" class="textLogin inputPassword">
                     <i class="fa fa-eye showPassword" alt = "showPassword"></i>
                 </div>
 
