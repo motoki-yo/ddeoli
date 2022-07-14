@@ -332,7 +332,7 @@
 
 <script>
 export default {
-    name:'manageProducts'
+    name:'ManageProducts'
 }
 </script>
 

@@ -1,122 +1,118 @@
 // Setting up router functions
 import { createWebHistory, createRouter } from "vue-router"
 
-
-// Importing views
-import AppHome from "@/views/AppHome.vue"
-import PageNotFound from '@/views/PageNotFound.vue'
-import AppAbout from '@/views/AppAbout.vue'
-
-import ShopSingle from '@/views/ShopSingle.vue'
-import ShopAll from '@/views/ShopAll.vue'
-
-import ShoppingCart from '@/views/ShoppingCart.vue'
-import ThankYou from '@/views/ThankYou.vue'
-import ContactInfo from '@/views/ContactInfo.vue'
-
-import UserProfile from '@/views/UserProfile.vue'
-import AccountInfo from '@/views/AccountInfo.vue'
-import UserOrders from '@/views/UserOrders.vue'
-import UserAdresses from '@/views/UserAdresses'
-import UserCards from '@/views/UserCards'
-
-import AppLogin from '@/views/AppLogin.vue'
-import AppRegister from '@/views/AppRegister.vue'
-
-import AdmInfo from '@/views/AdmInfo.vue'
-import manageProducts from '@/views/Products.vue'
-import AdmEdit from '@/views/AdmEdit'
-
 const routes = [
+
+    // ----------------- GLOBAL VIEWS ----------------- //
     {
       path: "/",
+      alias: ['/home', '/index'],
       name: "AppHome",
-      component: AppHome,
+      component: () => import(/* webpackChunkName: "AppHome" */ '@/views/AppHome')
     },
     {
       path: '/about',
       name: "AppAbout",
-      component: AppAbout,
+      component: () => import(/* webpackChunkName: "AppAbout" */ '@/views/AppAbout')
     },
     {
       path: '/shop-all',
       name: "ShopAll",
-      component: ShopAll,
+      component: () => import(/* webpackChunkName: "ShopAll" */ '@/views/ShopAll')
     },
     {
       path: '/shop-single',
       name: "ShopSingle",
-      component: ShopSingle,
-    },
-    {
-      path: '/cart',
-      name: "ShoppingCart",
-      component: ShoppingCart,
-    },
-    {
-      path: '/thankyou',
-      name: "ThankYou",
-      component: ThankYou,
+      component: () => import(/* webpackChunkName: "ShopSingle" */ '@/views/ShopSingle')
     },
     {
       path: '/contact',
       name: "ContactInfo",
-      component: ContactInfo,
-    },
-    {
-      path: '/profile',
-      name: "UserProfile",
-      component: UserProfile,
-    },
-    {
-      path: '/account-info',
-      name: "AccountInfo",
-      component: AccountInfo,
+      component: () => import(/* webpackChunkName: "ContactInfo" */ '@/views/ContactInfo')
     },
     {
       path: '/login',
       name: "AppLogin",
-      component: AppLogin,
+      component: () => import(/* webpackChunkName: "AppLogin" */ '@/views/AppLogin')
     },
     {
       path: '/register',
       name: "AppRegister",
-      component: AppRegister,
+      component: () => import(/* webpackChunkName: "AppRegister" */ '@/views/AppRegister')
+    },
+
+    // ----------------- USER VIEWS ----------------- //
+    {
+      path: '/cart',
+      name: "ShoppingCart",
+      component: () => import(/* webpackChunkName: "ShoppingCart" */ '@/views/ShoppingCart'),
+      meta: { requiresLogin: true }
+    },
+    {
+      path: '/thankyou',
+      name: "ThankYou",
+      component: () => import(/* webpackChunkName: "ThankYou" */ '@/views/ThankYou'),
+      meta: { requiresLogin: true }
+    },
+
+    {
+      path: '/profile',
+      name: "UserProfile",
+      component: () => import(/* webpackChunkName: "UserProfile" */ '@/views/UserProfile'),
+      meta: { requiresLogin: true }
+    },
+    {
+      path: '/account-info',
+      name: "AccountInfo",
+      component: () => import(/* webpackChunkName: "AccountInfo" */ '@/views/AccountInfo'),
+      meta: { requiresLogin: true }
     },
     {
       path: '/orders',
       name: "UserOrders",
-      component: UserOrders,
+      component: () => import(/* webpackChunkName: "UserOrders" */ '@/views/UserOrders'),
+      meta: { requiresLogin: true }
     },
     {
       path: '/cards',
       name: "UserCards",
-      component: UserCards,
+      component: () => import(/* webpackChunkName: "UserCards" */ '@/views/UserCards'),
+      meta: { requiresLogin: true }
     },
     {
       path: '/adresses',
       name: "UserAdresses",
-      component: UserAdresses,
+      component: () => import(/* webpackChunkName: "UserAdresses" */ '@/views/UserAdresses'),
+      meta: { requiresLogin: true }
     },
+
+    // ----------------- ADMIN VIEWS ----------------- //
+
     {
       path: '/admInfo',
       name: "AdmInfo",
-      component: AdmInfo,
+      component: () => import(/* webpackChunkName: "AdmInfo" */ '@/views/AdmInfo'),
+      meta: { requiresLogin: true }
     },
     {
       path: '/admEdit',
       name: "AdmEdit",
-      component: AdmEdit,
+      component: () => import(/* webpackChunkName: "AdmEdit" */ '@/views/AdmEdit'),
+      meta: { requiresLogin: true }
     },
     {
       path: '/manageProducts',
-      name: "manageProducts",
-      component: manageProducts,
+      name: "ManageProducts",
+      component: () => import(/* webpackChunkName: "ManageProducts" */ '@/views/ManageProducts'),
+      meta: { requiresLogin: true }
     },
+
+    // ----------------- ERROR 404: PAGE NOT FOUND ----------------- //
+    // Error 404 must always be last!
     {
       path: '/:catchAll(.*)*',
       name: "PageNotFound",
-      component: PageNotFound,
+      component: () => import(/* webpackChunkName: "PageNotFound" */ '@/views/PageNotFound')
     },
   ]
 

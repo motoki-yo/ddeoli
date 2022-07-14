@@ -25,7 +25,8 @@
                 </div>
                     
                 <div id = "editAccount">
-                    <form id="app" class="container-fluid" v-on:submit.prevent="validate">
+                    <!-- ADD LATER ON: v-on:submit.prevent="validate" -->
+                    <form id="app" class="container-fluid" method="post">
                         <div class = "divLabel">
                             <label>First Name</label>
                             <div class="invalid" v-if="validation.invalid.firstName">{{ validation.invalid.firstName }}</div>
