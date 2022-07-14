@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "description": "backend",
+  "main": "index.ts",
+  "repository": "",
+  "author": "ddeoli",
+  "license": "MIT",
+  "dependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongod": "^2.0.0",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.4.2",
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^17.0.25",
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15",
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q index.js\""
+  }
