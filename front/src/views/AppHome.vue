@@ -29,7 +29,7 @@
   <div class="carousel-inner">
     <!-- Single item -->
     <div class="carousel-item active">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(19).webp" class="d-block w-100" alt="Motorbike Smoke"/>
+      <img src="../../public/assets/images/slider-01.jpg" class="d-block w-100" alt="Motorbike Smoke"/>
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -38,7 +38,7 @@
 
     <!-- Single item -->
     <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(35).webp" class="d-block w-100" alt="Mountaintop"/>
+      <img src="../../public/assets/images/slider-02.jpg" class="d-block w-100" alt="Mountaintop"/>
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -47,7 +47,7 @@
 
     <!-- Single item -->
     <div class="carousel-item">
-      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(40).webp" class="d-block w-100" alt="Woman Reading a Book"/>
+      <img src="../../public/assets/images/slider-03.jpg" class="d-block w-100" alt="Woman Reading a Book"/>
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -77,7 +77,7 @@
 				<div class="col-md-6 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="../../public/assets/images/banner-04.jpg" alt="IMG-BANNER">
+						<img src="../../public/assets/images/banner-01.jpg" alt="IMG-BANNER">
 
 						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
@@ -102,7 +102,7 @@
 				<div class="col-md-6 p-b-30 m-lr-auto">
 					<!-- Block1 -->
 					<div class="block1 wrap-pic-w">
-						<img src="../../public/assets/images/banner-05.jpg" alt="IMG-BANNER">
+						<img src="../../public/assets/images/banner-02.jpg" alt="IMG-BANNER">
 
 						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">

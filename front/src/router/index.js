@@ -61,30 +61,31 @@ const routes = [
       component: () => import(/* webpackChunkName: "UserProfile" */ '@/views/UserProfile'),
       meta: { requiresLogin: true }
     },
-    {
-      path: '/account-info',
-      name: "AccountInfo",
-      component: () => import(/* webpackChunkName: "AccountInfo" */ '@/views/AccountInfo'),
-      meta: { requiresLogin: true }
-    },
-    {
-      path: '/orders',
-      name: "UserOrders",
-      component: () => import(/* webpackChunkName: "UserOrders" */ '@/views/UserOrders'),
-      meta: { requiresLogin: true }
-    },
-    {
-      path: '/cards',
-      name: "UserCards",
-      component: () => import(/* webpackChunkName: "UserCards" */ '@/views/UserCards'),
-      meta: { requiresLogin: true }
-    },
-    {
-      path: '/adresses',
-      name: "UserAdresses",
-      component: () => import(/* webpackChunkName: "UserAdresses" */ '@/views/UserAdresses'),
-      meta: { requiresLogin: true }
-    },
+ 
+    // {
+    //   path: '/account-info',
+    //   name: "AccountInfo",
+    //   component: () => import(/* webpackChunkName: "AccountInfo" */ '@/views/AccountInfo'),
+    //   meta: { requiresLogin: true }
+    // },
+    // {
+    //   path: '/orders',
+    //   name: "UserOrders",
+    //   component: () => import(/* webpackChunkName: "UserOrders" */ '@/views/UserOrders'),
+    //   meta: { requiresLogin: true }
+    // },
+    // {
+    //   path: '/cards',
+    //   name: "UserCards",
+    //   component: () => import(/* webpackChunkName: "UserCards" */ '@/views/UserCards'),
+    //   meta: { requiresLogin: true }
+    // },
+    // {
+    //   path: '/adresses',
+    //   name: "UserAdresses",
+    //   component: () => import(/* webpackChunkName: "UserAdresses" */ '@/views/UserAdresses'),
+    //   meta: { requiresLogin: true }
+    // },
 
     // ----------------- ADMIN VIEWS ----------------- //
 

@@ -35,42 +35,42 @@
                 >
                 <a
                     class="nav-link active"
-                    id="v-tabs-home-tab"
-                    data-mdb-toggle="tab"
-                    href="#v-tabs-home"
-                    role="tab"
-                    aria-controls="v-tabs-home"
-                    aria-selected="true"
-                    >Profile</a
-                >
-                <a
-                    class="nav-link"
                     id="v-tabs-profile-tab"
                     data-mdb-toggle="tab"
                     href="#v-tabs-profile"
                     role="tab"
                     aria-controls="v-tabs-profile"
+                    aria-selected="true"
+                    >Profile</a
+                >
+                <a
+                    class="nav-link"
+                    id="v-tabs-adresses-tab"
+                    data-mdb-toggle="tab"
+                    href="#v-tabs-adresses"
+                    role="tab"
+                    aria-controls="v-tabs-adresses"
                     aria-selected="false"
                     >Adresses</a
                 >
                 <a
                     class="nav-link"
-                    id="v-tabs-messages-tab"
+                    id="v-tabs-cards-tab"
                     data-mdb-toggle="tab"
-                    href="#v-tabs-messages"
+                    href="#v-tabs-cards"
                     role="tab"
-                    aria-controls="v-tabs-messages"
+                    aria-controls="v-tabs-cards"
                     aria-selected="false"
                     >Cards</a
                 >
 
                 <a
                     class="nav-link"
-                    id="v-tabs-messages-tab"
+                    id="v-tabs-orders-tab"
                     data-mdb-toggle="tab"
-                    href="#v-tabs-messages"
+                    href="#v-tabs-orders"
                     role="tab"
-                    aria-controls="v-tabs-messages"
+                    aria-controls="v-tabs-orders"
                     aria-selected="false"
                     >Orders</a
                 >
@@ -83,39 +83,39 @@
                 <div class="tab-content" id="v-tabs-tabContent">
                 <div
                     class="tab-pane fade show active"
-                    id="v-tabs-home"
-                    role="tabpanel"
-                    aria-labelledby="v-tabs-home-tab"
-                >
-                    Home content
-                </div>
-                <div
-                    class="tab-pane fade"
                     id="v-tabs-profile"
                     role="tabpanel"
                     aria-labelledby="v-tabs-profile-tab"
                 >
-                    Profile content
+                    <account-info />
                 </div>
                 <div
                     class="tab-pane fade"
-                    id="v-tabs-messages"
+                    id="v-tabs-adresses"
                     role="tabpanel"
-                    aria-labelledby="v-tabs-messages-tab"
+                    aria-labelledby="v-tabs-adresses-tab"
                 >
-                    <user-orders />
+                    <user-adresses />
+                </div>
+                <div
+                    class="tab-pane fade"
+                    id="v-tabs-cards"
+                    role="tabpanel"
+                    aria-labelledby="v-tabs-cards-tab"
+                >
+                    <user-cards />
                 </div>
                 
                 <div
                     class="tab-pane fade"
-                    id="v-tabs-messages"
+                    id="v-tabs-orders"
                     role="tabpanel"
-                    aria-labelledby="v-tabs-messages-tab"
+                    aria-labelledby="v-tabs-orders-tab"
                 >
                     <user-orders />
                 </div>
 
-                
+
                 </div>
                 <!-- Tab content -->
             </div>
@@ -125,11 +125,17 @@
 </template>
 
 <script>
-import UserOrders from "./UserOrders.vue"
+import AccountInfo from "../components/UserProfile/AccountInfo.vue"
+import UserOrders from "../components/UserProfile/UserOrders.vue"
+import UserCards from "../components/UserProfile/UserCards.vue"
+import UserAdresses from "../components/UserProfile/UserAdresses.vue"
 export default {
   name: 'UserProfile',
   components: {
+      AccountInfo,
       UserOrders,
+      UserCards,
+      UserAdresses
   }
 }
 </script>

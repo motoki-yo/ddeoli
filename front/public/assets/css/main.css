@@ -1471,8 +1471,8 @@ label {
   
   
   /*//////////////////////////////////////////////////////////////////
-  [ Tab01 ]*/
-  .tab01 .nav-tabs {
+  [ Tab-panel ]*/
+ .nav-tabs {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -1484,11 +1484,11 @@ label {
     border: none;
   }
   
-  .tab01 .nav-tabs .nav-item {
+ .nav-tabs .nav-item {
     margin: 0px 15px;
   }
   
-  .tab01 .nav-link {
+ .nav-link {
     font-family: Poppins-Regular;
     font-size: 15px;
     color: #888;
@@ -1505,12 +1505,12 @@ label {
     transition: all 0.4s;
   }
   
-  .tab01 .nav-link.active {
+ .nav-link.active {
     color: #333;
     border-color: #797979;
   }
   
-  .tab01 .nav-link:hover {
+ .nav-link:hover {
     color: #333;
     border-color: #797979;
   }
