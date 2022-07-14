@@ -24,7 +24,7 @@
         </section>	
 
         <!-- Tab -->
-        <div class="row">
+        <div class="row container bg0 p-t-104 p-b-116">
             <div class="col-3">
                 <!-- Tab navs -->
                 <div
