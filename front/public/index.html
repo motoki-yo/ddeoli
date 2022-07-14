@@ -5,24 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- <link rel="stylesheet" href="./assets/https://fonts.googleapis.com/css?family=Mukta:300,400,700">  -->
     <link rel="stylesheet" href="./assets/fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/magnific-popup.css">
     <link rel="stylesheet" href="./assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
 
 
     <link rel="stylesheet" href="./assets/css/aos.css">
-
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="./assets/images/icons/favicon.svg"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
@@ -38,13 +33,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="./assets/vendor/select2/select2.min.css">
     <!--===============================================================================================-->	
-    <link rel="stylesheet" type="text/css" href="./assets/vendor/daterangepicker/daterangepicker.css">
-    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="./assets/vendor/slick/slick.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="./assets/vendor/MagnificPopup/magnific-popup.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="./assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="./assets/css/util.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
@@ -60,7 +49,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
 
-    
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
+    rel="stylesheet"
+    />
 
   </head>
   <body class="animsition">
@@ -76,111 +79,21 @@
     <script src="./assets/js/jquery-ui.js"></script>
     <script src="./assets/js/popper.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.min.js"></script>
     <script src="./assets/js/aos.js"></script>
   
     <script src="./assets/js/util.js"></script>
 
-    <!--===============================================================================================-->
-        <script src="./assets/vendor/animsition/js/animsition.min.js"></script>
-    <!--===============================================================================================-->
-        <script src="./assets/vendor/select2/select2.min.js"></script>
-        <script>
-            $(".js-select2").each(function(){
-                $(this).select2({
-                    minimumResultsForSearch: 20,
-                    dropdownParent: $(this).next('.dropDownSelect2')
-                });
-            })
-        </script>
-    <!--===============================================================================================-->
-        <script src="./assets/vendor/daterangepicker/moment.min.js"></script>
-        <script src="./assets/vendor/daterangepicker/daterangepicker.js"></script>
-    <!--===============================================================================================-->
-        <!-- <script src="./assets/vendor/slick/slick.min.js"></script> -->
-        <!-- <script src="./assets/js/slick-custom.js"></script> -->
-    <!--===============================================================================================-->
-        <script src="./assets/vendor/parallax100/parallax100.js"></script>
-        <script>
-            $('.parallax100').parallax100();
-        </script>
-    <!--===============================================================================================-->
-        <script src="./assets/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-        <script>
-            $('.gallery-lb').each(function() { // the containers for all your galleries
-                $(this).magnificPopup({
-                    delegate: 'a', // the selector for gallery item
-                    type: 'image',
-                    gallery: {
-                        enabled:true
-                    },
-                    mainClass: 'mfp-fade'
-                });
-            });
-        </script>
-    <!--===============================================================================================-->
-        <script src="./assets/vendor/isotope/isotope.pkgd.min.js"></script>
-    <!--===============================================================================================-->
-        <script src="./assets/vendor/sweetalert/sweetalert.min.js"></script>
-        <script>
-            $('.js-addwish-b2').on('click', function(e){
-                e.preventDefault();
-            });
-    
-            $('.js-addwish-b2').each(function(){
-                var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-                $(this).on('click', function(){
-                    swal(nameProduct, "is added to wishlist !", "success");
-    
-                    $(this).addClass('js-addedwish-b2');
-                    $(this).off('click');
-                });
-            });
-    
-            $('.js-addwish-detail').each(function(){
-                var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-    
-                $(this).on('click', function(){
-                    swal(nameProduct, "is added to wishlist !", "success");
-    
-                    $(this).addClass('js-addedwish-detail');
-                    $(this).off('click');
-                });
-            });
-    
-            /*---------------------------------------------*/
-    
-            $('.js-addcart-detail').each(function(){
-                var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-                $(this).on('click', function(){
-                    swal(nameProduct, "is added to cart !", "success");
-                });
-            });
-        
-        </script>
-    <!--===============================================================================================-->
-        <script src="./assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-        <script>
-            $('.js-pscroll').each(function(){
-                $(this).css('position','relative');
-                $(this).css('overflow','hidden');
-                var ps = new PerfectScrollbar(this, {
-                    wheelSpeed: 1,
-                    scrollingThreshold: 1000,
-                    wheelPropagation: false,
-                });
-    
-                $(window).on('resize', function(){
-                    ps.update();
-                })
-            });
-        </script>
-    <!--===============================================================================================-->
-        <script src="./assets/js/main.js"></script>
+    <script src="./assets/vendor/animsition/js/animsition.min.js"></script>
 
-        <script src="./assets/js/templatemo.js"></script>
-        <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/templatemo.js"></script>
+
+    
+    <!-- MDB -->
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
+    ></script>
 
   </body>
 </html>
