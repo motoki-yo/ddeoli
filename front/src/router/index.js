@@ -31,14 +31,10 @@ const routes = [
       component: () => import(/* webpackChunkName: "ContactInfo" */ '@/views/ContactInfo')
     },
     {
-      path: '/login',
-      name: "AppLogin",
-      component: () => import(/* webpackChunkName: "AppLogin" */ '@/views/AppLogin')
-    },
-    {
-      path: '/register',
-      name: "AppRegister",
-      component: () => import(/* webpackChunkName: "AppRegister" */ '@/views/AppRegister')
+      path: '/login-register',
+      alias: ['/login', '/signin', '/signup', '/register'],
+      name: "LoginRegister",
+      component: () => import(/* webpackChunkName: "LoginRegister" */ '@/views/LoginRegister')
     },
 
     // ----------------- USER VIEWS ----------------- //
