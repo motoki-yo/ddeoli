@@ -95,9 +95,9 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
-                    <div class="invalid-feedback lh-condensed"> Please enter your shipping address. </div>
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required="">
+                    <div class="invalid-feedback lh-condensed"> Please enter your password. </div>
                 </div>                
             <hr class="mb-4">
 				
