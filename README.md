@@ -4,7 +4,7 @@
 <head>
 </head>
 <body>
-<p align="center"><img src="git-resources/favicon.svg" background-color:"white"/></p>
+<p align="center"><img src="front/git-resources/favicon.svg" background-color:"white"/></p>
 </body>
 </html>
 
@@ -39,7 +39,7 @@ O nome _ddeoli(떨이)_ é uma palavra da língua coreana. O termo refere-se aos
 
 
 ## Estrutura (Diagrama de Navegação)
-![Screenshot](git-resources/Sitemap.png)
+![Screenshot](front/git-resources/Sitemap.png)
 
 ## Plano de teste
 
@@ -48,7 +48,33 @@ Existirão testes automatizados utilizando Jest e Postman, também vai haver um 
 
 ## Procedimento de compilação
 
-Para rodar a aplicação.
+Para você poder executar o código é necessário que a máquina tenha o `npm` instalado.
+
+Após a instalação do npm, para instalar os pacotes necessários basta executar:
+```
+cd front
+```
+```
+npm install
+```
+
+Para compilar o código e ter o hot-reload para desenvolvimento:
+```
+npm run serve
+```
+
+Para compilar para produção:
+```
+npm run build
+```
+
+<!--Para rodar o servidor, na pasta `back` basta rodar:
+```
+cd back
+```
+```
+npm run dev
+```!-->
 
 
 ## Problemas enfrentados
