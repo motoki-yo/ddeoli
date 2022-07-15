@@ -1,10 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import * as bodyparser from 'body-parser';
+import bodyParser from 'body-parser';
 import cors from 'cors';
 
-import router from './routes';
+import router from './routes/index.js';
 
 dotenv.config();
 
@@ -14,8 +14,8 @@ const PORT = process.env.APP_PORT ?? 6000;
 const app = express();
 
 app.use(cors());
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 app.use(router);
 
 console.log("Connecting to Mongodb")
