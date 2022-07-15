@@ -49,6 +49,11 @@ O nome _ddeoli (떨이)_ é uma palavra da língua coreana. O termo refere-se ao
 
 ## Comentários sobre o código
 
+Utilizou-se o padrão de projeto do VueJS (na versão 3) com pastas: components, views, assets, css globais.
+Ainda, foram utilizados os frameworks Bootstrap 5 e MDBootstrap 5 para o desenvolvimento responsivo.
+
+`Foi usado localStorage para simular o funcionamento do backend. Além de um arquivo de dados, ao invés dos dados do banco.`
+
 
 ## Estrutura (Diagrama de Navegação)
 ![Screenshot](front/git-resources/Sitemap.png)
@@ -56,6 +61,22 @@ O nome _ddeoli (떨이)_ é uma palavra da língua coreana. O termo refere-se ao
 ## Plano de teste
 
 Existirão testes automatizados utilizando Jest e Postman, também vai haver um sistema de CI/CD com testes de perfomance para garantia do funcionamento do sistema durante o desenvolvimento.
+
+Para o teste das implementações de páginas:
+1. Compra:
+    
+    O usuário pode adicionar e remover produtos do carrinho. Os produtos podem ser adicionados pela pela página de produtos ou pela página de um produto específico.
+
+2. Admin:
+
+    Ao entrar na página de admin o usuário precisa ter a permissão necessária para poder logar. Ao logar ele pode acessar as páginas de produto, admins e usuários. Nessas temos um menu responsivo para adição, edição e remoção de produtos, admins ou usuários.
+
+3. Novas informações para o usuário
+
+    Entrando na página do perfil do usuário o mesmo pode adicionar ou editar endereços para entrega e informações gerais.
+
+## Resultados dos Testes
+
 
 
 ## Procedimento de compilação
@@ -91,7 +112,7 @@ npm run dev
 
 ## Problemas enfrentados
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id metus varius, maximus enim quis, hendrerit libero. Nunc pretium nibh sed faucibus pulvinar. Phasellus in tristique orci, et lacinia justo. In nunc magna, condimentum a urna ut, aliquet pellentesque libero.
+Problemas internos em relação à formação do grupo ocorrerão pouco após a entrega da Milestone 1.
 
 ## Comentários
 
