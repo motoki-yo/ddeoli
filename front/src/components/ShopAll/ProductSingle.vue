@@ -4,26 +4,26 @@
         <div class="block2">
             <div class="block2-pic hov-img0">
                 <a href="/shop-single">
-                    <img src="../../public/assets/images/product-01.jpg" alt="IMG-PRODUCT">
+                    <img :src="product.url" :alt="product.shortdesc">
                 </a>
             </div>
 
             <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l ">
                     <a href="/shop-single" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                        Esprit Ruffle Shirt
+                        {{ product.name }}
                     </a>
 
                     <span class="stext-105 cl3">
-                        $16.64
+                        ${{ product.price }}
                     </span>
                 </div>
                 
                 <!-- addwish doesn't work yet (and probably never will!) !-->
                 <div class="block2-txt-child2 flex-r p-t-3">
                     <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                        <img class="icon-heart1 dis-block trans-04" src="../../public/assets/images/icons/icon-heart-01.png" alt="ICON">
-                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="../../public/assets/images/icons/icon-heart-02.png" alt="ICON">
+                        <img class="icon-heart1 dis-block trans-04" src="../../../public/assets/images/icons/icon-heart-01.png" alt="ICON">
+                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="../../../public/assets/images/icons/icon-heart-02.png" alt="ICON">
                     </a>
                 </div>
                 
@@ -34,7 +34,8 @@
 
 <script>
 export default {
-  name: 'ProductBlock'
+    name : "ProductSingle",
+    props : ['product'],
 }
 </script>
 
