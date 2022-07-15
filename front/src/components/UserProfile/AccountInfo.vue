@@ -3,83 +3,104 @@
 <!--Account-->
     <main>
     <!-- Content page -->
-			<div class="flex-w flex-tr">
-				<div class="size-210 bor10 p-lr-70 p-t-10 p-b-10 p-lr-15-lg w-full-md">
-					<form>
-						<h4 class="mtext-105 cl2 txt-center p-b-30">
-							Send Us A Message
-						</h4>
+		<div class="flex-w flex-tr">
+			<div class="bor10 p-lr-70 p-t-10 p-b-10 p-lr-15-lg w-full">
+				<h4 class="mtext-105 cl2 txt-left p-b-30">
+					Edit profile information
+				</h4>
+								
+				<form class="needs-validation" novalidate="">
+                    <div class="col-md mb-4">
+                        <label for="firstName" class="form-label">Full name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                        <div class="invalid-feedback lh-condensed"> Valid full name is required.</div>
+                    </div>
 
-						<div class="bor8 m-b-20 how-pos4-parent">
-							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">
-							<img class="how-pos4 pointer-none" src="../../../public/assets/images/icons/icon-email.png" alt="ICON">
-						</div>
+                <div class="col-md mb-4">
+                    <label for="username" class="form-label">E-mail</label>
+                    <div class="input-group input-group-lg">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
+                        <div class="invalid-feedback lh-condensed" style="width: 100%;"> Your email is required. </div>
+                    </div>
+                </div>
 
-						<div class="bor8 m-b-30">
-							<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="How Can We Help?"></textarea>
-						</div>
+                <div class="mb-4">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                    <div class="invalid-feedback lh-condensed"> Please enter your shipping address. </div>
+                </div>
 
-						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-							Submit
-						</button>
-					</form>
-				</div>
+                <div class="row mb-4">
 
-				<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
-					<div class="flex-w w-full p-b-42">
-						<span class="fs-18 cl5 txt-center size-211">
-							<span class="lnr lnr-map-marker"></span>
-						</span>
+                <div class="col-md-4 mb-4">
+                  <label for="country" class="form-label">Country</label>
+                    <select class="form-select form-select-lg" id="country" required="">
+                      <option selected disabled value="">Choose...</option>
+                      <option value="1">Brazil</option>
+                      <option value="2">Japan</option>
+                      <option value="3">South Korea</option>
+                  </select>
+                  <div class="invalid-feedback lh-condensed"> Please select a valid country. </div>
+                </div>
 
-						<div class="size-212 p-t-2">
-							<span class="mtext-110 cl2">
-								Address
-							</span>
+                <div class="col-md-4 mb-4">
+                  <label for="country" class="form-label">State</label>
+                    <select class="form-select form-select-lg" id="country" required="">
+                    <option selected disabled value="">Choose...</option>
+                    <option value="1">Acre</option>
+                    <option value="2">São Paulo</option>
+                    <option value="3">Rio de Janeiro</option>
+                  </select>
+                  <div class="invalid-feedback lh-condensed"> Please select a valid state. </div>
+                </div>
 
-							<p class="stext-115 cl6 size-213 p-t-18">
-								USP/ICMC - Av. Trabalhador São Carlense
-							</p>
-						</div>
-					</div>
+              <div class="col-md mb-4">
+                  <label for="zip">Zip code</label>
+                  <input type="text" class="form-control" id="zip" placeholder="" required="">
+                  <div class="invalid-feedback lh-condensed"> Zip code required. </div>
+              </div>
 
-					<div class="flex-w w-full p-b-42">
-						<span class="fs-18 cl5 txt-center size-211">
-							<span class="lnr lnr-phone-handset"></span>
-						</span>
-
-						<div class="size-212 p-t-2">
-							<span class="mtext-110 cl2">
-								Lets Talk
-							</span>
-
-							<p class="stext-115 cl1 size-213 p-t-18">
-								+1 800 1236879
-							</p>
-						</div>
-					</div>
-
-					<div class="flex-w w-full">
-						<span class="fs-18 cl5 txt-center size-211">
-							<span class="lnr lnr-envelope"></span>
-						</span>
-
-						<div class="size-212 p-t-2">
-							<span class="mtext-110 cl2">
-								Sale Support
-							</span>
-
-							<p class="stext-115 cl1 size-213 p-t-18">
-								contact@example.com
-							</p>
-						</div>
-					</div>
-				</div>
+                </div>
+                
+                <hr class="mb-4">
+				
+				<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
+					Save changes
+				</button>
+				
+            </form>
 			</div>
+		</div>
+
     </main>
 </div>
 </template>
 
 <script>
+// Disable form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  window.addEventListener('load', function () {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.filter.call(forms, function (form) {
+      form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+  }, false)
+}())
+
 export default {
     name:'AccountInfo'
 }
@@ -87,4 +108,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+	.lh-condensed { line-height: 1.25rem; }
+
 </style>
