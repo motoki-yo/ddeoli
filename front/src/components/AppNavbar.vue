@@ -16,14 +16,16 @@
 
 
               <div class="p-2 site-navbar site-top-icons text-right">
-                <ul class="site-menu ">
+                <ul class="site-menu">
                   <li><a href="/profile"><span class="icon icon-person"></span></a></li>
+
                   <li>
                     <a href="/cart" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
                       <span class="count">+</span>
                     </a>
                   </li> 
+
                   <!-- <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li> -->
                 </ul>
               </div> 
@@ -54,9 +56,10 @@
 </template>
 
 <script>
-
 export default {
-  name: 'AppNavbar'
+  name: 'AppNavbar',
+  components: {
+  }
 }
 </script>
 
