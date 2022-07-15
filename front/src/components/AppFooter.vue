@@ -1,107 +1,38 @@
 <template>
-<div class="site-wrap">
-<!-- Footer -->
-	<footer class="bg3 p-t-75 p-b-32">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Categories
-					</h4>
 
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
-							</a>
-						</li>
+	<footer class="bg-dark text-center text-white">
+	<!-- Grid container -->
+	<div class="container p-4 pb-0">
+		<!-- Section: Social media -->
+		<section class="mb-4">
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
-							</a>
-						</li>
+		<!-- Twitter -->
+		<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+			><i class="fab fa-twitter"></i
+		></a>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
-							</a>
-						</li>
+		<!-- Instagram -->
+		<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+			><i class="fab fa-instagram"></i
+		></a>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
-					</ul>
-				</div>
+		<!-- Github -->
+		<a class="btn btn-outline-light btn-floating m-1" href="https://github.com/motoki-yo/ddeoli" role="button"
+			><i class="fab fa-github"></i
+		></a>
+		</section>
+		<!-- Section: Social media -->
+	</div>
+	<!-- Grid container -->
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Help
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
-					</h4>
-
-					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-					</p>
-
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-facebook"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-instagram"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-pinterest-p"></i>
-						</a>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="p-t-40">
-				<p class="stext-107 cl6 txt-center">
-					Copyright &copy;2022 All rights reserved
-				</p>
-			</div>
-		</div>
+	<!-- Copyright -->
+	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+		<p>Copyright © 2022</p>
+		<a class="text-white" href="https://github.com/motoki-yo/ddeoli"><span>ddeoli</span></a>
+	</div>
+	<!-- Copyright -->
 	</footer>
-</div>
+  
 </template>
 
 <script>
@@ -112,5 +43,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+span{
+	font-family: 'Bad Boys';
+	font-size: 2rem;
+	line-height: 0.5rem;
+}
 
+span:hover{
+	opacity: 70%;
+}
 </style>

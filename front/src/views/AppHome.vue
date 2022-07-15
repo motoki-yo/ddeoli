@@ -3,25 +3,25 @@
 	<!-- Slider -->
 
     <!-- Carousel wrapper -->
-	<div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-dark" data-mdb-ride="carousel">
+	<div id="carouselHome" class="carousel slide carousel-fade carousel" data-mdb-ride="carousel">
 	<!-- Indicators -->
 	<div class="carousel-indicators">
 		<button
-		data-mdb-target="#carouselDarkVariant"
+		data-mdb-target="#carouselHome"
 		data-mdb-slide-to="0"
 		class="active"
 		aria-current="true"
-		aria-label="Slide 1"
+		aria-label="Slide 3"
 		></button>
 		<button
-		data-mdb-target="#carouselDarkVariant"
+		data-mdb-target="#carouselHome"
 		data-mdb-slide-to="1"
 		aria-label="Slide 1"
 		></button>
 		<button
-		data-mdb-target="#carouselDarkVariant"
+		data-mdb-target="#carouselHome"
 		data-mdb-slide-to="2"
-		aria-label="Slide 1"
+		aria-label="Slide 2"
 		></button>
 	</div>
 
@@ -31,8 +31,8 @@
     <div class="carousel-item active">
       <img src="../../public/assets/images/slider-01.jpg" class="d-block w-100" alt="Motorbike Smoke"/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h5>Synk Dive</h5>
+        <p>첨 보는 style, 멋모를 timing, 너의 약점에다, hit, it's so funny! 한밤의 party, 널 끌어당김. 알아도 막을 수 없는 반칙</p>
       </div>
     </div>
 
@@ -40,8 +40,8 @@
     <div class="carousel-item">
       <img src="../../public/assets/images/slider-02.jpg" class="d-block w-100" alt="Mountaintop"/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h5>Wildside</h5>
+        <p>My wild side, my wild side 弱さ超えた まだ見ぬ私を (Wild side) far away, far away 高く高く まだ見ぬ場所まで 誰も止められないもう.</p>
       </div>
     </div>
 
@@ -49,19 +49,19 @@
     <div class="carousel-item">
       <img src="../../public/assets/images/slider-03.jpg" class="d-block w-100" alt="Woman Reading a Book"/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <h5>Maniac</h5>
+        <p>Mash up, mind blown 정신은 back up. Prototype 내 속은 언제나 freaky monster, 유행 같은 친절함은 철이 지나 rotten</p>
       </div>
     </div>
   </div>
   <!-- Inner -->
 
   <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="prev">
+  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselHome" data-mdb-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-mdb-target="#carouselDarkVariant" data-mdb-slide="next">
+  <button class="carousel-control-next" type="button" data-mdb-target="#carouselHome" data-mdb-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
@@ -132,11 +132,11 @@
 						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Watches
+									Synk Dive
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Winter 2022
+									너의 약점에다!
 								</span>
 							</div>
 
@@ -157,11 +157,11 @@
 						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Bags
+									Wildside
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Winter 2022
+									本能で do it
 								</span>
 							</div>
 
@@ -182,11 +182,11 @@
 						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Accessories
+									Maniac
 								</span>
 
 								<span class="block1-info stext-102 trans-04">
-									Winter 2022
+									Frankenstein처럼
 								</span>
 							</div>
 

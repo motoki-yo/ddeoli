@@ -1,51 +1,50 @@
 <template>
 <div class="site-wrap">
-       <!--Account-->
-        <main>
-            <div id="backgroundProfile" style="background-image: none;">
-                <div class="divAccount">
-                    <ul class="listAccount">
-                        <li>my account</li>
-                        <br>
-                        <br>
-                        <li><a class="text-dark" href = "/profile">overview</a></li>
-                        <li><a class="text-dark" href = "/account-info">account information</a></li>
-                        <li><a class="text-dark" href = "/adresses">address book</a></li>
-                        <li><a class="text-dark" href = "/orders">orders</a></li>
-                        <li><a class="text-dark" style="text-decoration: overline;" href = "/cards">saved credit cards</a></li>
-                        <li><a class="text-dark"  href = "/">LOGOUT</a></li>
-                    </ul>
-                </div>
-                
-                <div id = "idDivAccount">
-                    <div id = "editCards">
-                        <p>
-                            my saved cards
-                        </p> 
-                    </div>
-                        
-                    <div style="display: flex;">
-                        <div id="savedAddresses">
-                            <ul style="list-style: none;">
-                                <li>Name Card</li>
-                                <li>Credit card ending in •••• 9999</li>
-                                <li>Name on card</li>
-                                <li>Expiration date</li>
-                                <div style = "float: right; height: 1px;" class="nav-link text-dark"><a onclick="editInf()" style="color: rgb(4, 4, 90);">Edit</a></div>
-                            </ul>
-                        </div>
+<!--Account-->
+    <main>
+    <!-- Content page -->
+		<div class="flex-w flex-tr">
+			<div class="bor10 p-lr-70 p-t-10 p-b-10 p-lr-15-lg w-full">
+				<h4 class="mtext-105 cl2 txt-left p-b-30">
+					Saved Cards
+				</h4>
+								
+				<form class="needs-validation" novalidate="">
+                    
+				<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
+					Save changes
+				</button>
+				
+            </form>
+			</div>
+		</div>
 
-                        <div id="savedAddresses" style="border-style:dashed; border-width: 3px; border-color: #C7C7C7;">
-                            <div class="nav-link"><a class="text-dark" onclick="editInf()" href="#nq">Add Card</a></div>
-                        </div>
-                </div>
-            </div>
-            </div>
-        </main>
+    </main>
 </div>
 </template>
 
 <script>
+// Disable form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  window.addEventListener('load', function () {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.filter.call(forms, function (form) {
+      form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+  }, false)
+}())
+
 export default {
     name:'UserCards'
 }

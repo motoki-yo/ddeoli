@@ -2,7 +2,7 @@
   <div class="site-wrap">
 <!-- breadcrumb -->
 	<div class="container">
-		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg m-b-20">
 			<a href="/" class="stext-109 cl8 hov-cl1 trans-04">
 				Home
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
@@ -120,26 +120,6 @@
 							</div>	
 						</div>
 
-						<!--  -->
-						<div class="flex-w flex-m p-l-100 p-t-40 respon7">
-							<div class="flex-m bor9 p-r-10 m-r-11">
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
-									<i class="zmdi zmdi-favorite"></i>
-								</a>
-							</div>
-
-							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
-								<i class="fa fa-facebook"></i>
-							</a>
-
-							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
-								<i class="fa fa-twitter"></i>
-							</a>
-
-							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
-								<i class="fa fa-google-plus"></i>
-							</a>
-						</div>
 					</div>
 				</div>
 			</div>
