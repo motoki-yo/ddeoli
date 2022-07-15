@@ -12,6 +12,10 @@ export default {
   components: {
     AppNavbar,
     AppFooter
-  }
+  },
+  // mounted() {
+  //   this.$store.commit("setUrls");
+  //   this.$store.dispatch("getProducts");
+  // },
 }
 </script>
