@@ -82,5 +82,4 @@ export async function update(req, res) {
         console.log(e)
         return res.status(500).send({'error': 'update error'});
     }
-    return false;
 };
