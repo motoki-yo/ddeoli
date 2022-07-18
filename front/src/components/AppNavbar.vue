@@ -10,14 +10,21 @@
                 </form>
               </div>
 
-              <div class="m-r-170 site-logo text-center">
+              <div class="m-r-125 site-logo text-center">
                 <a href="/" class="" style="text-decoration: none;">ddeoli</a>
               </div>
 
 
-              <div class="p-2 site-navbar site-top-icons text-right">
+              <div class="p-2 site-navbar site-top-icons site-navigation text-right">
                 <ul class="site-menu">
-                  <li><a href="/profile"><span class="icon icon-person"></span></a></li>
+                  <li class="has-children">
+                    <a href="/profile"><span class="icon icon-person"></span></a>
+                      <ul class="dropdown">
+                        <!-- Add filters later on -->
+                        <li><a href="/profile"><i class="fa-solid fa-id-card"></i> My profile</a></li>
+                        <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                      </ul>
+                  </li>
 
                   <li>
                     <a href="/cart" class="site-cart">
@@ -41,9 +48,9 @@
               <a href="/shop-all">Shop</a>
               <ul class="dropdown">
                 <!-- Add filters later on -->
-                <li><a href="/shop-all">Synk Dive Collection</a></li>
-                <li><a href="/shop-all">Wildside Collection</a></li>
-                <li><a href="/shop-all">Maniac Collection</a></li>
+                <li><a href="/shop-all">Synk Dive</a></li>
+                <li><a href="/shop-all">Wildside</a></li>
+                <li><a href="/shop-all">Maniac</a></li>
               </ul>
             </li>
             <li><a href="/contact">Contact</a></li>

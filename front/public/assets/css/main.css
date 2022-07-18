@@ -294,8 +294,7 @@ a {
     list-style: none; }
   .site-navbar .site-top-icons ul li {
     display: inline-block; }
-    .site-navbar .site-top-icons ul li a {
-      margin-right: 10px; }
+
       .site-navbar .site-top-icons ul li a.site-cart {
         display: block;
         position: relative; }
@@ -304,7 +303,7 @@ a {
           top: 0;
           right: 0;
           margin-right: -15px;
-          margin-top: -20px;
+          margin-top: -10px !important;
           font-size: 13px;
           width: 24px;
           height: 24px;
@@ -314,16 +313,16 @@ a {
           text-align: center;
           background: #7971ea;
           color: #fff;
-          -webkit-transition: .2s all ease-in-out;
-          -o-transition: .2s all ease-in-out;
-          transition: .2s all ease-in-out;
-          -moz-transition: .2s all ease-in-out;
-          -ms-transition: .2s all ease-in-out;
+          -webkit-transition: .2s all ease-in-out !important;
+          -o-transition: .2s all ease-in-out !important;
+          transition: .2s all ease-in-out !important;
+          -moz-transition: .2s all ease-in-out !important;
+          -ms-transition: .2s all ease-in-out !important;
 }
       .site-navbar .site-top-icons ul li a:hover .count {
         -webkit-box-shadow: 0 3px 10px -4px rgba(0, 0, 0, 0.3) !important;
         box-shadow: 0 3px 10px -4px rgba(0, 0, 0, 0.3) !important;
-        margin-top: -22px; }
+        margin-top: -13px !important; }
     .site-navbar .site-top-icons ul li:last-child a {
       padding-right: 0; }
   .site-navbar .site-top-icons ul .site-menu-toggle {
@@ -391,7 +390,7 @@ a {
         -o-transition: 0.2s 0s;
         transition: 0.2s 0s; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown a {
-          font-size: 16px;
+          font-size: 12px;
           text-transform: none;
           letter-spacing: normal;
           -webkit-transition: 0s all;
@@ -403,7 +402,7 @@ a {
           list-style: none;
           padding: 0;
           margin: 0;
-          min-width: 200px; }
+          min-width: 130px; }
           .site-navbar .site-navigation .site-menu .has-children .dropdown > li > a {
             padding: 9px 20px;
             display: block; }
@@ -744,11 +743,9 @@ label {
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     border: none;
+    width: 100%;
   }
   
  .nav-tabs .nav-item {

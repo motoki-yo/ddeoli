@@ -1,0 +1,176 @@
+<template>
+<main>
+        <!-- Products table START !-->
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="mtext-105">
+                                    Manage users
+                                </h4>
+                            </div>
+
+                            <div class="col">
+                                <button @click="showAddUserModal = true" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-circle-plus"></i> <span>Add New User</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Thomas Hardy</td>
+                                <td>thomashardy@mail.com</td>
+                                <td>89 Chiaroscuro Rd, Portland, USA</td>
+                                <td>(171) 555-2222</td>
+                                <td>Client</td>
+                                <td>
+                                    <button @click="showEditUserModal = true"  class="edit" data-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button @click="showDeleteUserModal = true"  class="delete" data-toggle="modal"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="text-center">No users</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    
+                </div>
+        </div>        <!-- Products table END !-->
+        
+        <!-- Add Modal HTML -->
+        <vue-final-modal v-model="showAddUserModal" classes="modal-container" name="addUser">   
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form validate>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Add user</h4>
+                            <button class="modal__close" @click="showAddUserModal = false">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input-mask mask="###.###.###.###" masked class="form-control" required></input-mask>
+                            </div>					
+                        </div>
+                        <div class="modal-footer modal__action">
+                            <button @click="showModal = false" class="btn btn-success">Add</button>
+                            <button @click="showAddUserModal = false" class="btn btn-default">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </vue-final-modal>
+
+        <!-- Edit Modal HTML -->
+       <vue-final-modal v-model="showEditUserModal" classes="modal-container" name="editUser">   
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Edit user</h4>
+                            <button class="modal__close" @click="showEditUserModal = false">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">					
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" required>
+                            </div>					
+                        </div>
+                        <div class="modal-footer modal__action">
+                            <button @click="showModal = false" class="btn btn-success">Save changes</button>
+                            <button @click="showEditUserModal = false" class="btn btn-default">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </vue-final-modal>
+
+        <!-- Delete Modal HTML -->
+       <vue-final-modal v-model="showDeleteUserModal" classes="modal-container" name="deletUser">   
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Delete User</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <p>Are you sure you want to delete these Records?</p>
+                            <p class="text-warning"><small>This action cannot be undone.</small></p>
+                        </div>
+                            <div class="modal-footer modal__action">
+                                <button @click="showDeleteUserModal = false" class="btn btn-success">Delete</button>
+                                <button @click="showDeleteUserModal = false" class="btn btn-default">Cancel</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </vue-final-modal>
+
+
+</main>
+</template>
+
+<script>
+import { VueFinalModal } from 'vue-final-modal'
+
+export default {
+    name:'ManageUsers',
+    components: {
+        VueFinalModal,
+    },
+    data () {
+        return {
+            showModal: false,
+            showAddUserModal:false,
+            showEditUserModal:false,
+            showDeleteUserModal:false,
+        }
+    },
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+@import '../../../public/assets/css/admin.css';
+</style>

@@ -11,7 +11,7 @@
                 </a>
 
                 <span class="stext-109 cl4">
-                    My profile
+                    Administrator Settings
                 </span>
             </div>
         </div>
@@ -19,12 +19,12 @@
         <!-- Title page -->
         <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('../assets/images/bg-01.jpg');">
             <h2 class="ltext-105 cl0 txt-center">
-                Profile
+                Admin Dashboard
             </h2>
         </section>	
 
         <!-- Tab -->
-        <div class="row container bg0 p-t-104 p-b-116">
+        <div class="row container bg0 p-t-104 p-b-116 text-left">
             <div class="col-3">
                 <!-- Tab navs -->
                 <div
@@ -35,44 +35,34 @@
                 >
                 <a
                     class="nav-link active"
-                    id="v-tabs-profile-tab"
+                    id="v-tabs-manageUsers-tab"
                     data-mdb-toggle="tab"
-                    href="#v-tabs-profile"
+                    href="#v-tabs-manageUsers"
                     role="tab"
-                    aria-controls="v-tabs-profile"
-                    aria-selected="true"
-                    >Profile</a
+                    aria-controls="v-tabs-manageUsers"
+                    aria-selected="false"
+                    >Manage users</a
                 >
                 <a
                     class="nav-link"
-                    id="v-tabs-adresses-tab"
+                    id="v-tabs-manageProducts-tab"
                     data-mdb-toggle="tab"
-                    href="#v-tabs-adresses"
+                    href="#v-tabs-manageProducts"
                     role="tab"
-                    aria-controls="v-tabs-adresses"
+                    aria-controls="v-tabs-manageProducts"
                     aria-selected="false"
-                    >Adresses</a
-                >
-                <a
-                    class="nav-link"
-                    id="v-tabs-cards-tab"
-                    data-mdb-toggle="tab"
-                    href="#v-tabs-cards"
-                    role="tab"
-                    aria-controls="v-tabs-cards"
-                    aria-selected="false"
-                    >Cards</a
+                    >Manage Products</a
                 >
 
                 <a
                     class="nav-link"
-                    id="v-tabs-orders-tab"
+                    id="v-tabs-manageOrders-tab"
                     data-mdb-toggle="tab"
-                    href="#v-tabs-orders"
+                    href="#v-tabs-manageOrders"
                     role="tab"
-                    aria-controls="v-tabs-orders"
+                    aria-controls="v-tabs-manageOrders"
                     aria-selected="false"
-                    >Orders</a
+                    >Manage Orders</a
                 >
                 </div>
                 <!-- Tab navs -->
@@ -83,36 +73,28 @@
                 <div class="tab-content" id="v-tabs-tabContent">
                 <div
                     class="tab-pane fade show active"
-                    id="v-tabs-profile"
+                    id="v-tabs-manageUsers"
                     role="tabpanel"
-                    aria-labelledby="v-tabs-profile-tab"
+                    aria-labelledby="v-tabs-manageUsers-tab"
                 >
-                    <account-info />
+                    <manage-users />
                 </div>
                 <div
                     class="tab-pane fade"
-                    id="v-tabs-adresses"
+                    id="v-tabs-manageProducts"
                     role="tabpanel"
-                    aria-labelledby="v-tabs-adresses-tab"
+                    aria-labelledby="v-tabs-manageProducts-tab"
                 >
-                    <user-adresses />
-                </div>
-                <div
-                    class="tab-pane fade"
-                    id="v-tabs-cards"
-                    role="tabpanel"
-                    aria-labelledby="v-tabs-cards-tab"
-                >
-                    <user-cards />
+                    <manage-products />
                 </div>
                 
                 <div
                     class="tab-pane fade"
-                    id="v-tabs-orders"
+                    id="v-tabs-manageOrders"
                     role="tabpanel"
-                    aria-labelledby="v-tabs-orders-tab"
+                    aria-labelledby="v-tabs-manageOrders-tab"
                 >
-                    <user-orders />
+                    <manage-orders />
                 </div>
 
 
@@ -125,17 +107,17 @@
 </template>
 
 <script>
-import AccountInfo from "../components/UserProfile/AccountInfo.vue"
-import UserOrders from "../components/UserProfile/UserOrders.vue"
-import UserCards from "../components/UserProfile/UserCards.vue"
-import UserAdresses from "../components/UserProfile/UserAdresses.vue"
+import ManageProducts from "../components/AdminView/ManageProducts.vue"
+import ManageUsers from "../components/AdminView/ManageUsers.vue"
+import ManageOrders from "../components/AdminView/ManageOrders.vue"
+// import A from "../components/AdminView/?"
+
 export default {
-  name: 'UserProfile',
+  name: 'AdminView',
   components: {
-      AccountInfo,
-      UserOrders,
-      UserCards,
-      UserAdresses
+      ManageProducts,
+      ManageUsers,
+      ManageOrders,
   }
 }
 </script>

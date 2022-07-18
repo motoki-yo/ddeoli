@@ -86,23 +86,25 @@ const routes = [
     // ----------------- ADMIN VIEWS ----------------- //
 
     {
-      path: '/admInfo',
-      name: "AdmInfo",
-      component: () => import(/* webpackChunkName: "AdmInfo" */ '@/views/AdmInfo'),
+      path: '/admin-view',
+      alias: ['/adm', '/admInfo'],
+      name: "AdminView",
+      component: () => import(/* webpackChunkName: "AdminView" */ '@/views/AdminView'),
       meta: { requiresLogin: true }
     },
-    {
-      path: '/admEdit',
-      name: "AdmEdit",
-      component: () => import(/* webpackChunkName: "AdmEdit" */ '@/views/AdmEdit'),
-      meta: { requiresLogin: true }
-    },
-    {
-      path: '/manageProducts',
-      name: "ManageProducts",
-      component: () => import(/* webpackChunkName: "ManageProducts" */ '@/views/ManageProducts'),
-      meta: { requiresLogin: true }
-    },
+    
+    // {
+    //   path: '/admEdit',
+    //   name: "AdmEdit",
+    //   component: () => import(/* webpackChunkName: "AdmEdit" */ '@/views/AdmEdit'),
+    //   meta: { requiresLogin: true }
+    // },
+    // {
+    //   path: '/manageProducts',
+    //   name: "ManageProducts",
+    //   component: () => import(/* webpackChunkName: "ManageProducts" */ '@/views/ManageProducts'),
+    //   meta: { requiresLogin: true }
+    // },
 
     // ----------------- ERROR 404: PAGE NOT FOUND ----------------- //
     // Error 404 must always be last!
