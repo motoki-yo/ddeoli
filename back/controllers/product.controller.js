@@ -22,6 +22,21 @@ export async function register(req, res) {
     }
 };
 
+export async function getAllProducts(req, res) {
+    const { id } = req.params.id;
+    try {
+        const product = await ProductModel.findOne({ id });
+        if(!product) { 
+            return res.status(500).send({'error': 'Product not found'});
+        }
+
+        return res.status(200).send({product});
+    } catch(e) {
+        console.log(e)
+        return res.status(500).send({'error': 'get error'});
+    }
+};
+
 export async function getProduct(req, res) {
     const { id } = req.params.id;
     try {
