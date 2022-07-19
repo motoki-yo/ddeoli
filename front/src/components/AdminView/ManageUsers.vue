@@ -27,21 +27,26 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
+                        <!-- User load !-->
                         <tbody>
-                            <tr>
-                                <td>Thomas Hardy</td>
-                                <td>thomashardy@mail.com</td>
-                                <td>89 Chiaroscuro Rd, Portland, USA</td>
-                                <td>(171) 555-2222</td>
-                                <td>Client</td>
+                            <!-- If no users are registred !-->
+                            <tr v-if="!users.length">
+                                <td colspan="6" class="text-center">No users</td>
+                            </tr>
+
+                            <!-- Single user !-->
+                            <tr v-else v-for="user in users" :user="user" :key="user.id" >
+                                <td>{{ user.name }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.address }}</td>
+                                <td>{{ user.phone }}</td>
+                                <td>{{ user.isAdmin ? "Admin" : "Client"}}</td>
                                 <td>
                                     <button @click="showEditUserModal = true"  class="edit" data-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></button>
                                     <button @click="showDeleteUserModal = true"  class="delete" data-toggle="modal"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td colspan="6" class="text-center">No users</td>
-                            </tr>
+
                             
                         </tbody>
                     </table>
@@ -168,13 +173,31 @@
 </template>
 
 <script>
+import {computed} from 'vue';
+import {useStore} from "vuex";
+
 import { VueFinalModal } from 'vue-final-modal'
 
 export default {
     name:'ManageUsers',
+    props : ['user'],
+
     components: {
         VueFinalModal,
     },
+
+    setup(){
+        const store = useStore();
+        
+        let users = computed(function () {
+        return store.state.users
+        });
+
+        return {
+            users,
+        }
+    },
+    
     data () {
         return {
             showModal: false,
