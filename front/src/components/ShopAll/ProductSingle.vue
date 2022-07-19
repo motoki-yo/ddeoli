@@ -1,7 +1,7 @@
 <template>
     <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item insert-collection-name">
         <!-- Block2 -->
-        <div class="block2">
+        <div class="block2" :class="product.collectionType">
             <div class="block2-pic hov-img0">
                 <a href="/shop-single">
                     <img :src="product.url" :alt="product.shortdesc">
@@ -15,7 +15,7 @@
                     </a>
 
                     <span class="stext-105 cl3">
-                        ${{ product.price }}
+                        ${{ product.price }}    
                     </span>
                 </div>
                 
