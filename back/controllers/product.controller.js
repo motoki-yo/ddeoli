@@ -1,13 +1,14 @@
 import ProductModel from '../models/product.model.js';
 
 export async function register(req, res) {
-    const { name, description, group, price, qtyInInventory } = req.body;
+    const { name, description, collection, price, sizes, qtyInInventory } = req.body;
     try {
         let newProduct = new ProductModel({
             name : name,
             description : description,
-            group : group,
+            collection : collection,
             price : price,
+            sizes: sizes,
             qtyInInventory : qtyInInventory
         });
 
@@ -37,7 +38,7 @@ export async function getProduct(req, res) {
 };
 
 export async function update(req, res) {
-    const { name, description, group, price, qtyInInventory } = req.body;
+    const { name, description, collection, price, sizes, qtyInInventory } = req.body;
     const id = req.params.id;
 
     try {
@@ -46,9 +47,11 @@ export async function update(req, res) {
 
         product.name = name && name.trim() !== "" ? name : product.name;
         product.description = description && description.trim() !== "" ? description : product.description;
-        product.group = group && group.trim() !== "" ? group : product.group;
+        product.collection = collection && collection.trim() !== "" ? collection : product.collection;
         product.price = price && price.trim() !== "" ? price : product.price;
+        product.sizes = sizes && sizes.trim() !== "" ? sizes : product.sizes;
         product.qtyInInventory = qtyInInventory && qtyInInventory.trim() !== "" ? qtyInInventory : product.qtyInInventory;
+        
 
         const updatedProduct = await product.save();
         return res.status(200).send({updatedProduct});

@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
         trim: true,
         required: true
       },
-    group: {
+    collection: {
         type: String,
         trim: true,
         required: true
@@ -24,6 +24,10 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true
       },
+    sizes: [{
+      type: String,
+      default: ['XS','S', 'M', 'L', 'XL'] /* Product sizes */
+    }],
     qtyInInventory: {
         type: Number,
         default: 0,
