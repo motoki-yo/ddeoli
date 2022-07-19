@@ -14,5 +14,9 @@ app.use(store)
 import vfmPlugin from 'vue-final-modal'
 app.use(vfmPlugin)
 
+/* import axios plugins */
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+app.use(VueAxios, axios)
 
 app.mount('#app')

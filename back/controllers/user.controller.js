@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const SECRET = process.env.JWT_SECRET ?? '';
+const SECRET = process.env.JWT_SECRET || '';
 
 import UserModel from '../models/user.model.js';
 
