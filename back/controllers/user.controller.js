@@ -58,11 +58,12 @@ export async function login(req, res) {
 };
 
 export async function update(req, res) {
-    const { email, name, address, oldPassword, newPassword } = req.body;
+    const { email, name, address, phone, oldPassword, newPassword } = req.body;
+    console.log(req.body)
     const id = req.params.id;
 
     try {
-        const user = await UserModel.findById(id);
+        let user = await UserModel.findById(id);
         if (!user) return res.status(500).send("User not found");            
 
         if(oldPassword && newPassword) {
@@ -73,9 +74,11 @@ export async function update(req, res) {
             user.hash_password = await bcrypt.hash(newPassword, 10);
         }
 
-        user.email = email && email.trim() !== "" ? email : user.email;
-        user.name = name && name.trim() !== "" ? name : user.name;
-        user.addres = address && address.trim() !== "" ? address : user.phone;
+        user.email = email;
+        user.name = name;
+        user.address = address;
+        user.phone = phone;
+        console.log(user.name)
 
         const updatedUser = await user.save();
         return res.status(200).send({updatedUser});
@@ -93,6 +96,21 @@ export async function remove(req, res) {
         if (!count) return res.status(500).send("User not found");            
 
         return res.status(200).send({message: "Delete succesful"});
+    } catch(e) {
+        console.log(e)
+        return res.status(500).send({'error': 'update error'});
+    }
+};
+
+export async function getUser(req, res) {
+    const id  = req.query.id;
+
+    try {
+        const user = await UserModel.findById(id);
+        console.log(id)
+        if (!user) return res.status(500).send("User not found");            
+
+        return res.status(200).send(user);
     } catch(e) {
         console.log(e)
         return res.status(500).send({'error': 'update error'});
