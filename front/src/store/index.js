@@ -125,7 +125,35 @@
 //   }
 // })
 
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
+import createPersistedState from "vuex-persistedstate";
+import SecureLS from "secure-ls";
+
+/* =========== MODULES =========== */
+import cart from './modules/cart';
+import user from './modules/user';
+import products from './modules/products';
+import orders from './modelus/orders'
+
+const ls = new SecureLS({ isCompression: false });
+
+export default createStore({
+  modules: [
+    cart,
+    user,
+    products,
+    orders
+  ],
+  plugins: [
+    createPersistedState({
+      storage: {
+        getItem: (key) => ls.get(key),
+        setItem: (key, value) => ls.set(key, value),
+        removeItem: (key) => ls.remove(key),
+      },
+    }),
+  ],
+});
 
 export default createStore({
   state: {
