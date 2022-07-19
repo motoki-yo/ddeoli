@@ -12,7 +12,7 @@
 				<form class="needs-validation" novalidate="">
                 <div class="col-md mb-4">
                     <label for="firstName" class="form-label">Full name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                    <input type="text" class="form-control" v-model="uname" v-bind:placeholder="name" required="">
                     <div class="invalid-feedback lh-condensed"> Valid full name is required.</div>
                 </div>
 
@@ -22,26 +22,26 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">@</span>
                         </div>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
+                        <input type="email" class="form-control" v-model="uemail" v-bind:placeholder="email" required="">
                         <div class="invalid-feedback lh-condensed" style="width: 100%;"> Your email is required. </div>
                     </div>
                 </div>
 
                 <div class="mb-4">
                     <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                    <input type="text" class="form-control" v-model="uaddress" v-bind:placeholder="address" required="">
                     <div class="invalid-feedback lh-condensed"> Please enter your shipping address. </div>
                 </div>
 
                 <div class="mb-4">
                     <label for="phone" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="address" placeholder="+55(00)00000-0000"  required="">
+                    <input type="text" class="form-control" v-model="uphone" v-bind:placeholder="phone"  required="">
                     <div class="invalid-feedback lh-condensed"> Please enter your phone. </div>
                 </div>
                 
                 <hr class="mb-4">
 				
-				<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
+				<button @click="update" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="button">
 					Save changes
 				</button>
 				
@@ -74,6 +74,16 @@ export default {
               }, false)
             })
           }, false)
+        },
+
+        async update() {
+             await this.$store.dispatch("update", {
+                 id: this.id,
+                 email: this.uemail || this.email,
+                 name: this.uname || this.name,
+                 address: this.uaddress || this.address,
+                 phone: this.uphone || this.phone,
+             });
         }
     },
 
@@ -83,18 +93,45 @@ export default {
       return{
 
         user: {
-          name: null,
-          email: null,
-          address: null,
+          name: this.$store.getters.getName,
+          id: this.$store.getters.getId,
+          email: this.$store.getters.getEmail,
+          address: this.$store.getters.getAddress,
+          phone: this.$store.getters.getPhone,
           country: null,
           state: null,
           zipcode: null,
-          phone: null,
           role: null,
         },
 
       }
 
+    },
+
+    created() {
+      this.user.name = this.$store.getters.getName;
+      this.user.id = this.$store.getters.getId;
+      this.user.email= this.$store.getters.getEmail;
+      this.user.address= this.$store.getters.getAddress;
+      this.user.phone= this.$store.getters.getPhone;
+
+    },
+    computed: {
+      name() {
+        return this.$store.getters.getName
+      },
+      id() {
+        return this.$store.getters.getId
+      },
+      email() {
+        return this.$store.getters.getEmail
+      },
+      address() {
+        return this.$store.getters.getAddress
+      },
+      phone() {
+        return this.$store.getters.getPhone
+      },
     },
 
     beforeMount(){
