@@ -9,7 +9,7 @@
 			</a>
 
 			<a href="/shop-all" class="stext-109 cl8 hov-cl1 trans-04">
-				Women
+				{{ products[this.$route.params.productId-1].collectionType }}
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
 
