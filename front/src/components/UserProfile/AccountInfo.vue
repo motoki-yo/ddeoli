@@ -33,37 +33,11 @@
                     <div class="invalid-feedback lh-condensed"> Please enter your shipping address. </div>
                 </div>
 
-                <div class="row mb-4">
-
-                <div class="col-md-4 mb-4">
-                  <label for="country" class="form-label">Country</label>
-                    <select class="form-select form-select-lg" id="country" required="">
-                      <option selected disabled value="">Choose...</option>
-                      <option value="1">Brazil</option>
-                      <option value="2">Japan</option>
-                      <option value="3">South Korea</option>
-                  </select>
-                  <div class="invalid-feedback lh-condensed"> Please select a valid country. </div>
+                <div class="mb-4">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="address" placeholder="+55(00)00000-0000"  required="">
+                    <div class="invalid-feedback lh-condensed"> Please enter your phone. </div>
                 </div>
-
-                <div class="col-md-4 mb-4">
-                  <label for="country" class="form-label">State</label>
-                    <select class="form-select form-select-lg" id="country" required="">
-                    <option selected disabled value="">Choose...</option>
-                    <option value="1">Acre</option>
-                    <option value="2">São Paulo</option>
-                    <option value="3">Rio de Janeiro</option>
-                  </select>
-                  <div class="invalid-feedback lh-condensed"> Please select a valid state. </div>
-                </div>
-
-              <div class="col-md mb-4">
-                  <label for="zip">Zip code</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required="">
-                  <div class="invalid-feedback lh-condensed"> Zip code required. </div>
-              </div>
-
-            </div>
                 
                 <hr class="mb-4">
 				
@@ -102,6 +76,27 @@ export default {
           }, false)
         }
     },
+
+
+    data() {
+
+      return{
+
+        user: {
+          name: null,
+          email: null,
+          address: null,
+          country: null,
+          state: null,
+          zipcode: null,
+          phone: null,
+          role: null,
+        },
+
+      }
+
+    },
+
     beforeMount(){
         this.formValidation()
     },

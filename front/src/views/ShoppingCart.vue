@@ -26,7 +26,9 @@
 							<th class="column-2"></th>
 							<th class="column-3">Price</th>
 							<th class="column-4">Quantity</th>
-							<th class="column-5">Total</th>
+							<th class="column-5">Size</th>
+							<th class="column-6">Total</th>
+
 						</tr>
 						
 						<!-------- CART ITEM COMPONENT !-------->
@@ -73,7 +75,7 @@
 
 						<div class="size-209 p-r-18 p-r-0-sm w-full-ssm">
 							<p class="stext-111 cl6 p-t-2">
-								There are no shipping methods available. Please double check your address, or contact us if you need any help.
+								There are no shipping methods available, this is not a real online store. But please, go ahead and insert your credit card information.
 							</p>
 						</div>
 					</div>
@@ -132,44 +134,17 @@
                     <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
                     <div class="invalid-feedback lh-condensed"> Please enter your shipping address. </div>
                 </div>
-
-                <div class="row mb-4">
-
-                <div class="col-md-4 mb-4">
-                  <label for="country" class="form-label">Country</label>
-                    <select class="form-select form-select-lg" id="country" required="">
-                      <option selected disabled value="">Choose...</option>
-                      <option value="1">Brazil</option>
-                      <option value="2">Japan</option>
-                      <option value="3">South Korea</option>
-                  </select>
-                  <div class="invalid-feedback lh-condensed"> Please select a valid country. </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                  <label for="country" class="form-label">State</label>
-                    <select class="form-select form-select-lg" id="country" required="">
-                    <option selected disabled value="">Choose...</option>
-                    <option value="1">Acre</option>
-                    <option value="2">São Paulo</option>
-                    <option value="3">Rio de Janeiro</option>
-                  </select>
-                  <div class="invalid-feedback lh-condensed"> Please select a valid state. </div>
-                </div>
-
-              <div class="col-md mb-4">
-                  <label for="zip">Zip code</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required="">
-                  <div class="invalid-feedback lh-condensed"> Zip code required. </div>
-              </div>
-
-                </div>
                 
+				<div class="mb-4">
+					<label>Observations (optional)</label>
+					<textarea class="form-control"></textarea>
+				</div>
                 <hr class="mb-4">
 				
 				<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
 					Proceed to checkout
 				</button>
+				
 				</form>
 			</div>
 

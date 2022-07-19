@@ -73,7 +73,7 @@
 							</p>
 
 							<span class="stext-111 cl8">
-								- Steve Job’s 
+								- IU's 
 							</span>
 						</div>
 					</div>

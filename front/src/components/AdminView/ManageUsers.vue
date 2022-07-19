@@ -75,8 +75,16 @@
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input-mask mask="###.###.###.###" masked class="form-control" required></input-mask>
-                            </div>					
+                                <input class="form-control" required>
+                            </div>	
+                            <div class="form-group">
+                                <label>Role</label>
+                                <select class="form-select form-control" aria-label="Default select example" required>
+                                    <option selected disabled>Select role...</option>
+                                    <option value="1">Client</option>
+                                    <option value="2">Admin</option>
+                                </select>
+                            </div>  				
                         </div>
                         <div class="modal-footer modal__action">
                             <button @click="showModal = false" class="btn btn-success">Add</button>
@@ -88,7 +96,7 @@
         </vue-final-modal>
 
         <!-- Edit Modal HTML -->
-       <vue-final-modal v-model="showEditUserModal" classes="modal-container" name="editUser">   
+        <vue-final-modal v-model="showEditUserModal" classes="modal-container" name="editUser">   
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
@@ -114,7 +122,15 @@
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input type="text" class="form-control" required>
-                            </div>					
+                            </div>
+                            <div class="form-group">
+                                <label>Role</label>
+                                <select class="form-select form-control" aria-label="Default select example" required>
+                                    <option selected disabled>Select role...</option>
+                                    <option value="1">Client</option>
+                                    <option value="2">Admin</option>
+                                </select>
+                            </div>  					
                         </div>
                         <div class="modal-footer modal__action">
                             <button @click="showModal = false" class="btn btn-success">Save changes</button>

@@ -43,7 +43,8 @@
                     aria-selected="true"
                     >Profile</a
                 >
-                <a
+                
+                <!-- <a
                     class="nav-link"
                     id="v-tabs-adresses-tab"
                     data-mdb-toggle="tab"
@@ -62,7 +63,7 @@
                     aria-controls="v-tabs-cards"
                     aria-selected="false"
                     >Cards</a
-                >
+                > -->
 
                 <a
                     class="nav-link"
@@ -89,7 +90,8 @@
                 >
                     <account-info />
                 </div>
-                <div
+
+                <!-- <div
                     class="tab-pane fade"
                     id="v-tabs-adresses"
                     role="tabpanel"
@@ -104,7 +106,7 @@
                     aria-labelledby="v-tabs-cards-tab"
                 >
                     <user-cards />
-                </div>
+                </div> -->
                 
                 <div
                     class="tab-pane fade"
@@ -127,15 +129,15 @@
 <script>
 import AccountInfo from "../components/UserProfile/AccountInfo.vue"
 import UserOrders from "../components/UserProfile/UserOrders.vue"
-import UserCards from "../components/UserProfile/UserCards.vue"
-import UserAdresses from "../components/UserProfile/UserAdresses.vue"
+// import UserCards from "../components/UserProfile/UserCards.vue"
+// import UserAdresses from "../components/UserProfile/UserAdresses.vue"
 export default {
   name: 'UserProfile',
   components: {
       AccountInfo,
       UserOrders,
-      UserCards,
-      UserAdresses
+    //   UserCards,
+    //   UserAdresses
   }
 }
 </script>

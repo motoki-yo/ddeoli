@@ -1,5 +1,3 @@
-import express from 'express';
-
 import ProductModel from '../models/product.model.js';
 
 export async function register(req, res) {
