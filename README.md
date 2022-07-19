@@ -69,7 +69,7 @@ Para o teste das implementações de páginas:
 
 2. Admin:
 
-    Ao entrar na página de admin o usuário precisa ter a permissão necessária para poder logar. Ao logar ele pode acessar as páginas de produto e admins. Nessas temos um menu responsivo para adição, edição e remoção de produtos ou admins.
+    Ao entrar na página de admin o usuário precisa ter a permissão necessária para poder logar. Ao logar ele pode acessar as páginas de produto, admins e usuários. Nessas temos um menu responsivo para adição, edição e remoção de produtos, admins ou usuários.
 
 3. Novas informações para o usuário:
 
@@ -80,9 +80,25 @@ Após a realização dos testes não ocorreu nada fora do esperado.
 
 Resultado do teste de algums as páginas:
 1. Compra:
-![image](https://user-images.githubusercontent.com/64448792/179751148-f2646c44-bc50-4b39-9d8d-85a1cecf7c24.png)
 
+   <img src="https://user-images.githubusercontent.com/64448792/179791601-7254f7ad-9494-45a7-9654-e0c8e87e6060.png" width="800">
+   <img src="https://user-images.githubusercontent.com/64448792/179791830-068afe46-ac71-4b88-97b8-fbbf2aea0f78.png" width="800">
+   
 2. Admin:
+   
+   2.1: Adicionar,editar ou remover usuário/adm
+   
+   <img src="https://user-images.githubusercontent.com/64448792/179788704-04634ff6-f0ee-4910-b77c-f76c508d5a7d.png" width="800">
+   
+   2.2 Adicionar, editar ou remover produto
+   
+   <img src="https://user-images.githubusercontent.com/64448792/179788906-aeeecf21-ed08-4661-bcf9-41e9228875e7.png" width="800">
+   
+   2.3 Adicionar, editar ou remover pedido
+   
+   <img src="https://user-images.githubusercontent.com/64448792/179789558-ea8515b0-bbea-4696-87ee-2b92db416291.png" width="800">
+
+
 3. Novas informações para o usuário:
 
 ## Procedimento de compilação
