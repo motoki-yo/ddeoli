@@ -84,3 +84,17 @@ export async function update(req, res) {
         return res.status(500).send({'error': 'update error'});
     }
 };
+
+export async function remove(req, res) {
+    const { id } = req.body;
+
+    try {
+        const count = await UserModel.findByIdAndDelete(id);
+        if (!count) return res.status(500).send("User not found");            
+
+        return res.status(200).send({message: "Delete succesful"});
+    } catch(e) {
+        console.log(e)
+        return res.status(500).send({'error': 'update error'});
+    }
+};
