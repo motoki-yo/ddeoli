@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
         trim: true,
         required: true
       },
-    collection: {
+    collectionType: {
         type: String,
         trim: true,
         required: true
