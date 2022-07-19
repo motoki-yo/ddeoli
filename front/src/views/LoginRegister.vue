@@ -104,7 +104,7 @@
                 
             <hr class="mb-4">
 				
-            <button @click="register" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
+            <button @click="register" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="button">
                 Sign up
             </button>
 				
@@ -150,7 +150,7 @@
                 </div>                
             <hr class="mb-4">
 				
-				<button @click="login" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
+				<button @click="login" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="button">
 					Sign in
 				</button>
 				
@@ -262,12 +262,7 @@ export default {
         },
 
         async login() {
-            await this.v$.$reset();
-            
-            await this.v$.inEmail.$touch();
-            await this.v$.inPassword.$touch();
-           
-             await this.$store.dispatch("auth", {
+             await this.$store.dispatch("login", {
                  email: this.inEmail,
                  password: this.inPassword,
              });
@@ -280,11 +275,6 @@ export default {
          },
 
         async register() {
-            await this.v$.$reset();
-            await this.v$.upEmail.$touch();
-            await this.v$.upName.$touch();
-            await this.v$.upPassword.$touch();
-            await this.v$.upPhone.$touch();
 
             await this.$store.dispatch("register", {
                 name: this.upName,
@@ -297,7 +287,6 @@ export default {
                 /* Notificar erro no cadastro */
             } else {
                 /* Notificar cadastro com sucesso */
-                this.$router.push("/profile");
             }
          },
     },
@@ -306,6 +295,7 @@ export default {
 		this.formValidation()
 	}
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
