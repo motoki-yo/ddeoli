@@ -29,12 +29,12 @@ Projeto para a matéria **SSC0219 - Introdução ao desenvolvimento web**.
     * A compra pode ser concluída após o cliente confirmar/adicionar o endereço de entrega e os dados do cartão para pagamento.
     
 ### Registros de Dados
-* **Admnistradores**: id, nome, telefone e um cadastro (email e senha). 
-* **Clientes**: id, nome, telefone, um cadastro (email e senha), uma lista de endereços de entrega (inicialmente vazia), uma lista de cartões (inicialmente vazia) e uma lista de pedidos (inicialmente vazia).
+* **Admnistradores** e **Clientes**: id, nome, telefone e um cadastro (email e senha). 
 * **Produtos (roupas e acessórios)**: id, nome, preço, descrição, coleção, informações adicionais (peso, material), preço, quantidade em estoque e quantidade vendida.
+* **Pedidos (compras de usuários)**: id, data, email do usuário, items, quantidade de cada item, total da compra.
 
 ### Funcionalidade Extra 
-* O usuário pode filtrar os produtos. Além disso, será exibido um histórico de compras realizadas na loja.
+* O usuário poderá acessar um histórico de compras realizadas na loja. Somente um Administrador pode excluir o Pedido. Nenhum dos usuários é capaz de editá-lo.
 
 ### Requisitos Não Funcionais
 * O sistema deve ser responsivo e possuir boa usabilidade.  
