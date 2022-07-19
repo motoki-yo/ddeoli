@@ -88,15 +88,15 @@ Resultado do teste de algums as páginas:
    
    2.1: Adicionar,editar ou remover usuário/adm
    
-   <img src="https://user-images.githubusercontent.com/64448792/179788704-04634ff6-f0ee-4910-b77c-f76c508d5a7d.png" width="800">
+   <img src="https://user-images.githubusercontent.com/64448792/179792284-99bdaca6-a4bd-4103-8497-e2d3943191d8.png" width="800">
    
    2.2 Adicionar, editar ou remover produto
    
-   <img src="https://user-images.githubusercontent.com/64448792/179788906-aeeecf21-ed08-4661-bcf9-41e9228875e7.png" width="800">
+   <img src="https://user-images.githubusercontent.com/64448792/179792453-ae03b236-1966-42ff-985f-2d18cc43d64e.png" width="800">
    
    2.3 Adicionar, editar ou remover pedido
    
-   <img src="https://user-images.githubusercontent.com/64448792/179789558-ea8515b0-bbea-4696-87ee-2b92db416291.png" width="800">
+   <img src="https://user-images.githubusercontent.com/64448792/179792719-b2795f2a-8ef3-469c-99b0-54e1b82bec85.png" width="800">
 
 
 3. Novas informações para o usuário:
