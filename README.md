@@ -30,7 +30,7 @@ Projeto para a matéria **SSC0219 - Introdução ao desenvolvimento web**.
     
 ### Registros de Dados
 * **Admnistradores** e **Clientes**: id, nome, telefone e um cadastro (email e senha). 
-* **Produtos (roupas e acessórios)**: id, nome, preço, descrição, coleção, informações adicionais (peso, material), preço, quantidade em estoque e quantidade vendida.
+* **Produtos (roupas e acessórios)**: id, nome, preço, descrição, coleção (Synk Dive, Wildside ou Maniac), preço, quantidade em estoque e quantidade vendida.
 * **Pedidos (compras de usuários)**: id, data, email do usuário, items, quantidade de cada item, total da compra.
 
 ### Funcionalidade Extra 
