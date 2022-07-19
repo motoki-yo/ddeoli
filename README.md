@@ -60,24 +60,30 @@ Ainda, foram utilizados os frameworks Bootstrap 5 e MDBootstrap 5 para o desenvo
 
 ## Plano de teste
 
-Existirão testes automatizados utilizando Jest e Postman, também vai haver um sistema de CI/CD com testes de perfomance para garantia do funcionamento do sistema durante o desenvolvimento.
+Os tsestes foram realizados manualmente.
 
 Para o teste das implementações de páginas:
 1. Compra:
     
-    O usuário pode adicionar e remover produtos do carrinho. Os produtos podem ser adicionados pela pela página de produtos ou pela página de um produto específico.
+    O usuário pode adicionar e remover produtos do carrinho. Os produtos podem ser adicionados pela página de um produto específico.
 
 2. Admin:
 
-    Ao entrar na página de admin o usuário precisa ter a permissão necessária para poder logar. Ao logar ele pode acessar as páginas de produto, admins e usuários. Nessas temos um menu responsivo para adição, edição e remoção de produtos, admins ou usuários.
+    Ao entrar na página de admin o usuário precisa ter a permissão necessária para poder logar. Ao logar ele pode acessar as páginas de produto e admins. Nessas temos um menu responsivo para adição, edição e remoção de produtos ou admins.
 
-3. Novas informações para o usuário
+3. Novas informações para o usuário:
 
     Entrando na página do perfil do usuário o mesmo pode adicionar ou editar endereços para entrega e informações gerais.
 
 ## Resultados dos Testes
+Após a realização dos testes não ocorreu nada fora do esperado.
 
+Resultado do teste de algums as páginas:
+1. Compra:
+![image](https://user-images.githubusercontent.com/64448792/179751148-f2646c44-bc50-4b39-9d8d-85a1cecf7c24.png)
 
+2. Admin:
+3. Novas informações para o usuário:
 
 ## Procedimento de compilação
 
@@ -112,7 +118,9 @@ npm run dev
 
 ## Problemas enfrentados
 
-Problemas internos em relação à formação do grupo ocorrerão pouco após a entrega da Milestone 1.
+Ao decorrer do trabalho o grupo teve 2 obstáculos:
+1. Problema interno em relação a organização dos grupos da disciplina, houve a junção de dois grupos faltando apenas 2 semanas para a segunda entrega.
+2. Problema com o Vue na versão 3, como esse framework é bem novo, foi difícil encontrar plugins e ferramenras compatíveis, além disso a sua documentação encontra-se inconsistente. 
 
 ## Comentários
 
