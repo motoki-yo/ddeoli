@@ -60,7 +60,7 @@ Ainda, foram utilizados os frameworks Bootstrap 5 e MDBootstrap 5 para o desenvo
 
 ## Plano de teste
 
-Os tsestes foram realizados manualmente.
+Os testes foram realizados manualmente.
 
 Para o teste das implementações de páginas:
 1. Compra:
