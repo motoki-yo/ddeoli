@@ -38,7 +38,7 @@ Projeto para a matéria **SSC0219 - Introdução ao desenvolvimento web**.
 
 ### Requisitos Não Funcionais
 * O sistema deve ser responsivo e possuir boa usabilidade.  
-* O sistema deve permitir que o usuário acompanhe os _status_ de seu pedido.
+* O sistema deve permitir que o usuário acesse informações de seus pedidos.
     
 
 ## Descrição do projeto
