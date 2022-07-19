@@ -46,9 +46,9 @@
                                 <td colspan="2">{{ product.description}} </td>
                                 <td> {{ product.qtyInInventory }}</td>
                                 <td> {{ product.qtyInInventory * Math.floor(Math.random() * 10) }}</td>
-                                <td>{{ product.sizes.join(', ') }}</td>
+                                <td> {{ product.sizes.join(', ') }}</td>
                                 <td>
-                                    <button @click="showEditProductModal = true"  class="edit" data-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button productTable="product" @click="sendProductInfoModal(product); showEditProductModal = true"  class="edit" data-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></button>
                                     <button @click="showDeleteProductModal = true"  class="delete" data-toggle="modal"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -60,7 +60,7 @@
         </div> <!-- Products table END !-->
         
         <!-- Add Modal HTML -->
-        <vue-final-modal v-model="showAddProductModal" classes="modal-container" name="addUser">   
+        <vue-final-modal v-model="showAddProductModal" classes="modal-container" name="addProduct">   
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form validate>
@@ -156,60 +156,59 @@
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" :value="selectedProduct.name" required>
                             </div>
                             <div class="form-group">
                                 <label>Collection</label>
                                 <select class="form-select form-control" aria-label="Default select example">
-                                    <option selected disabled>Open this select menu</option>
-                                    <option value="1">Synk Dive</option>
-                                    <option value="2">Wildside</option>
-                                    <option value="3">Maniac</option>
+                                    <option value="Synk Dive" :selected= " selectedProduct.collectionType === 'Synk Dive' ">Synk Dive</option>
+                                    <option value="Wildside" :selected= " selectedProduct.collectionType === 'Wildside' ">Wildside</option>
+                                    <option value="Maniac" :selected= " selectedProduct.collectionType === 'Maniac' ">Maniac</option>
                                 </select>
                             </div>                            				
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label>Price</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" class="form-control" :value="selectedProduct.price" required>
                                 </div>
                                 <div class="form-group col-6">
                                     <label>Quantity in stock</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" class="form-control" :value="selectedProduct.qtyInInventory" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                               <textarea class="form-control" required></textarea>
+                               <textarea class="form-control" :value="selectedProduct.description" required></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label>Sizes</label>
                                 <div class="check-wrap">
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="XS" :checked="selectedProduct.sizes?.includes('XS')">
                                     <label class="form-check-label" for="inlineCheckbox1">XS</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="S" :checked="selectedProduct.sizes?.includes('S')">
                                     <label class="form-check-label" for="inlineCheckbox2">S</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="M" :checked="selectedProduct.sizes?.includes('M')">
                                     <label class="form-check-label" for="inlineCheckbox3">M</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="L" :checked="selectedProduct.sizes?.includes('L')">
                                     <label class="form-check-label" for="inlineCheckbox3">L</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="XL" :checked="selectedProduct.sizes?.includes('XL')">
                                     <label class="form-check-label" for="inlineCheckbox3">XL</label>
                                     </div>
                                 </div>
                             </div>						
                         </div>
                         <div class="modal-footer modal__action">
-                            <button @click="showModal = false" class="btn btn-success">Save changes</button>
+                            <button @click="showEditProductModal = false" class="btn btn-success">Save changes</button>
                             <button @click="showEditProductModal = false" class="btn btn-default">Cancel</button>
                         </div>
                     </form>
@@ -224,7 +223,9 @@
                     <form>
                         <div class="modal-header">						
                             <h4 class="modal-title">Delete Product</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <button class="modal__close" @click="showDeleteProductModal = false">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
                         </div>
                         <div class="modal-body">					
                             <p>Are you sure you want to delete these Records?</p>
@@ -269,15 +270,22 @@ export default {
             products,
         }
     },
-    
+
     data () {
         return {
             showModal: false,
             showAddProductModal:false,
             showEditProductModal:false,
             showDeleteProductModal:false,
+            selectedProduct: '',
         }
     },
+
+    methods: {
+        sendProductInfoModal(tableProduct) {
+            this.selectedProduct = tableProduct;
+        }
+    }
 
 
 }

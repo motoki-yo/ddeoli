@@ -32,7 +32,7 @@
 						</tr>
 						
 						<!-------- CART ITEM COMPONENT !-------->
-						<cart-item />
+						<CartItem v-for="item in cart" :item="item" :key="item.id"/>
 
 					</table>
 				</div>

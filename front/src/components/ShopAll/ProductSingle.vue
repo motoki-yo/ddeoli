@@ -3,16 +3,16 @@
         <!-- Block2 -->
         <div class="block2" :class="product.collectionType">
             <div class="block2-pic hov-img0">
-                <a href="/shop-single">
+                <router-link :to='{name: "ShopSingle", params: { productId: product.id }}'>
                     <img :src="product.img" :alt="product.description">
-                </a>
+                </router-link>
             </div>
 
             <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l ">
-                    <a href="/shop-single" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                    <router-link :to='{name: "ShopSingle", params: { productId: product.id }}' class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                         {{ product.name }}
-                    </a>
+                    </router-link>
 
                     <span class="stext-105 cl3">
                         ${{ product.price }}    
