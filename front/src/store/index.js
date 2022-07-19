@@ -131,7 +131,7 @@ import { createStore } from "vuex";
 
 /* =========== MODULES =========== */
 // import cart from './modules/cart';
-// import user from './modules/user';
+import user from './modules/user';
 // import products from './modules/products';
 // import orders from './modelus/orders'
 
@@ -156,6 +156,9 @@ import { createStore } from "vuex";
 // });
 
 export default createStore({
+  modules: [
+    user,
+  ],
   state: {
     products : [
         {
@@ -255,7 +258,27 @@ export default createStore({
         },
     ],
 
-    cart : [{}],
+    cart : [
+      {
+        id : 1,
+        productId: 2,
+        quantity: 3,
+        size: 'S'
+      },
+      {
+        id : 2,
+        productId: 4,
+        quantity: 1,
+        size: 'XS'
+      },
+      {
+        id : 3,
+        productId: 6,
+        quantity: 5,
+        size: 'XL'
+      }
+    ],
+
     orders: [{}],
   },
   mutations: {
