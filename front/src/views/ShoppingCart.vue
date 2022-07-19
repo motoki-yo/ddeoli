@@ -32,7 +32,7 @@
 						</tr>
 						
 						<!-------- CART ITEM COMPONENT !-------->
-						<cart-item />
+						<CartItem v-for="item in cart" :item="item" :key="item.id"/>
 
 					</table>
 				</div>
@@ -156,10 +156,26 @@
 <script>
 
 import CartItem from "../components/ShoppingCart/CartItem.vue"
+
+import {computed} from 'vue';
+import {useStore} from "vuex";
+
 export default {
 	name: 'ShoppingCart',
 	components: {
 		CartItem,
+	},
+
+    setup(){
+		const store = useStore();
+		
+		let cart = computed(function () {
+		return store.state.cart
+		});
+
+		return {
+			cart,
+		}
 	},
 	
 	methods:{
@@ -182,6 +198,7 @@ export default {
 			}, false)
 		}
 	},
+
 	beforeMount(){
 		this.formValidation()
 	},

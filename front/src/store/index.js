@@ -255,7 +255,27 @@ export default createStore({
         },
     ],
 
-    cart : [{}],
+    cart : [
+      {
+        id : 1,
+        productId: 2,
+        quantity: 3,
+        size: 'S'
+      },
+      {
+        id : 2,
+        productId: 4,
+        quantity: 1,
+        size: 'XS'
+      },
+      {
+        id : 3,
+        productId: 6,
+        quantity: 5,
+        size: 'XL'
+      }
+    ],
+
     orders: [{}],
   },
   mutations: {

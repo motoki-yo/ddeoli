@@ -42,7 +42,7 @@
                                 <td>{{ user.phone }}</td>
                                 <td>{{ user.isAdmin ? "Admin" : "Client"}}</td>
                                 <td>
-                                    <button @click="showEditUserModal = true"  class="edit" data-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button userTable="user" @click="sendUserInfoModal(user); showEditUserModal = true"  class="edit" data-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></button>
                                     <button @click="showDeleteUserModal = true"  class="delete" data-toggle="modal"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -92,7 +92,7 @@
                             </div>  				
                         </div>
                         <div class="modal-footer modal__action">
-                            <button @click="showModal = false" class="btn btn-success">Add</button>
+                            <button @click="showAddUserModal = false" class="btn btn-success">Add</button>
                             <button @click="showAddUserModal = false" class="btn btn-default">Cancel</button>
                         </div>
                     </form>
@@ -114,26 +114,25 @@
                         <div class="modal-body">					
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" :value="selectedUser.name" required>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control" required>
+                                <input type="email" class="form-control" :value="selectedUser.email" required>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <textarea class="form-control" required></textarea>
+                                <textarea class="form-control" :value="selectedUser.address" required></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" class="form-control" :value="selectedUser.phone" required>
                             </div>
                             <div class="form-group">
                                 <label>Role</label>
                                 <select class="form-select form-control" aria-label="Default select example" required>
-                                    <option selected disabled>Select role...</option>
-                                    <option value="1">Client</option>
-                                    <option value="2">Admin</option>
+                                    <option value="false" :selected="!selectedUser.isAdmin">Client</option>
+                                    <option value="true" :selected="selectedUser.isAdmin">Admin</option>
                                 </select>
                             </div>  					
                         </div>
@@ -153,7 +152,9 @@
                     <form>
                         <div class="modal-header">						
                             <h4 class="modal-title">Delete User</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <button class="modal__close" @click="showDeleteUserModal = false">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
                         </div>
                         <div class="modal-body">					
                             <p>Are you sure you want to delete these Records?</p>
@@ -204,8 +205,15 @@ export default {
             showAddUserModal:false,
             showEditUserModal:false,
             showDeleteUserModal:false,
+            selectedUser: '',
         }
     },
+
+    methods: {
+        sendUserInfoModal(tableUser) {
+            this.selectedUser = tableUser;
+        }
+    }
 }
 </script>
 

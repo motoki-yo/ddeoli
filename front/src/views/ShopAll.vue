@@ -71,6 +71,7 @@ import {useStore} from "vuex";
 
 export default {
 	name: 'ShopAll',
+	
 	components: {
 		ProductSingle,
 	},
