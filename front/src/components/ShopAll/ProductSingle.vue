@@ -4,7 +4,7 @@
         <div class="block2" :class="product.collectionType">
             <div class="block2-pic hov-img0">
                 <a href="/shop-single">
-                    <img :src="product.url" :alt="product.shortdesc">
+                    <img :src="product.img" :alt="product.description">
                 </a>
             </div>
 

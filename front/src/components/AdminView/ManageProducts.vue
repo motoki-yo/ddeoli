@@ -30,30 +30,34 @@
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td><img class = "avatar" src="../../../public/assets/images/product-08.jpg"></td>
-                                <td>Vintage Jacket Byeol-i</td>
-                                <td>Maniac</td>
-                                <td>$ 56.78</td>
-                                <td colspan="2">A fashionable, all-dress, high-cut, jacket. I want to perish soooooOOOOOOOoooOoOoO bad.</td>
-                                <td> 878</td>
-                                <td> 9182</td>
-                                <td> XS, S, M, L, XL, XXL</td>
+                        <!-- Product load !-->
+                        <tbody >
+                            <!-- If no products are registred !-->
+                            <tr v-if="!products.length">
+                                <td colspan="10" class="text-center">No products</td>
+                            </tr>
+
+                            <!-- Single product !-->
+                            <tr v-else v-for="product in products" :product="product" :key="product.id" >
+                                <td><img class = "avatar" :src="product.img" :alt="product.description"></td>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.collectionType }}</td>
+                                <td>$ {{ product.price }}</td>
+                                <td colspan="2">{{ product.description}} </td>
+                                <td> {{ product.qtyInInventory }}</td>
+                                <td> {{ product.qtyInInventory * Math.floor(Math.random() * 10) }}</td>
+                                <td>{{ product.sizes.join(', ') }}</td>
                                 <td>
                                     <button @click="showEditProductModal = true"  class="edit" data-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></button>
                                     <button @click="showDeleteProductModal = true"  class="delete" data-toggle="modal"><i class="fa-solid fa-trash"></i></button>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td colspan="10" class="text-center">No products</td>
                             </tr>
                             
                         </tbody>
                     </table>
                     
                 </div>
-        </div>        <!-- Products table END !-->
+        </div> <!-- Products table END !-->
         
         <!-- Add Modal HTML -->
         <vue-final-modal v-model="showAddProductModal" classes="modal-container" name="addUser">   
@@ -240,13 +244,32 @@
 </template>
 
 <script>
+import {computed} from 'vue';
+import {useStore} from "vuex";
+
 import { VueFinalModal } from 'vue-final-modal'
+
 
 export default {
     name:'ManageProducts',
+    props : ['product'],
+
     components: {
         VueFinalModal,
     },
+
+    setup(){
+        const store = useStore();
+        
+        let products = computed(function () {
+        return store.state.products
+        });
+
+        return {
+            products,
+        }
+    },
+    
     data () {
         return {
             showModal: false,
@@ -255,6 +278,8 @@ export default {
             showDeleteProductModal:false,
         }
     },
+
+
 }
 </script>
 
