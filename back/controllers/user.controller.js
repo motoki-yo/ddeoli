@@ -9,15 +9,16 @@ const SECRET = process.env.JWT_SECRET ?? '';
 import UserModel from '../models/user.model.js';
 
 export async function register(req, res) {
-    const { email, name, address, password } = req.body;
+    const { email, name, address, phone, password } = req.body;
     try {
         if(await UserModel.findOne({ email: email})) {
-            return res.status(500).send({'error': 'Email alredgy registered'});
+            return res.status(500).send({'error': 'Email already registered'});
         }
 
         let newUser = new UserModel({
             email : email,
             name : name,
+            phone : phone,
             address : address
         });
         newUser.hash_password = await bcrypt.hash(password, 10);

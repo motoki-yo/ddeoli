@@ -1,5 +1,5 @@
 <template>
-    <tr class="table_row">
+<tr class="table_row">
     <td class="column-1">
         <div class="how-itemcart1">
             <img src="../../../public/assets/images/item-cart-01.jpg" alt="Product image">
@@ -8,19 +8,19 @@
     <td class="column-2"><a href="./shop-single">Fresh Strawberries</a></td>
     <td class="column-3">$ 36.00</td>
     <td class="column-4">
-        <div class="wrap-num-product flex-w m-l-auto m-r-0">
-            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                <i class="fs-16 zmdi zmdi-minus"></i>
-            </div>
-
-            <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="1">
-
-            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                <i class="fs-16 zmdi zmdi-plus"></i>
-            </div>
-        </div>
+        <input type="number" class="form-control" id="quantity" name="quantity" min="1" max="5" value="1">
     </td>
-    <td class="column-5">$ 36.00</td>
+    <td class="column-5">
+        <select v-model="upCountry" class="form-select form-select-lg" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="1">XS</option>
+            <option value="1">S</option>
+            <option value="1">M</option>
+            <option value="1">L</option>
+            <option value="1">XL</option>
+        </select>
+    </td>
+    <td class="column-6">$ 36.00</td>
 </tr>
 </template>
 

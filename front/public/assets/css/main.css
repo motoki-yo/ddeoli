@@ -929,21 +929,28 @@ label {
   }
   
   .table-shopping-cart .column-2 {
-    width: 220px;
+    width: 180px;
     font-size: 15px;
   }
   
   .table-shopping-cart .column-3 {
-    width: 120px;
+    width: 100px;
     font-size: 16px;
   }
   
   .table-shopping-cart .column-4 {
+    width: 100px;
+    text-align: right;
+  }
+
+  .table-shopping-cart .column-5 {
+    align-items: center;
+    padding-left: 50px;
     width: 145px;
     text-align: right;
   }
   
-  .table-shopping-cart .column-5 {
+  .table-shopping-cart .column-6 {
     width: 172px;
     padding-right: 50px;
     text-align: right;

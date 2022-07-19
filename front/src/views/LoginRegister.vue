@@ -10,65 +10,103 @@
 								
 				<form class="needs-validation" novalidate="">
                 <div class="col-md mb-4">
-                    <label for="firstName" class="form-label">Full name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                    <label for="upName" class="form-label">Full name</label>
+                    <input 
+                        v-model="upName"
+                        type="text" 
+                        class="form-control" 
+                        placeholder="" 
+                        required />
                     <div class="invalid-feedback lh-condensed"> Valid full name is required.</div>
                 </div>
 
                 <div class="col-md mb-4">
-                    <label for="username" class="form-label">E-mail</label>
+                    <label for="upEmail" class="form-label">E-mail</label>
                     <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
                             <span class="input-group-text">@</span>
                         </div>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
+                        <input 
+                            v-model="upEmail"
+                            type="email" 
+                            class="form-control" 
+                            placeholder="you@example.com" 
+                            required/>
                         <div class="invalid-feedback lh-condensed" style="width: 100%;"> Your email is required. </div>
                     </div>
                 </div>
 
                 <div class="mb-4">
-                    <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                    <label for="upPassword" class="form-label">Password</label>
+                    <input 
+                        v-model="upPassword"
+                        type="password" 
+                        class="form-control" 
+                        placeholder="Enter a password" 
+                        required/>
+                    <div class="invalid-feedback lh-condensed"> Please enter a password. </div>
+                </div> 
+
+                <div class="mb-4">
+                    <label for="upPhone" class="form-label">Phone</label>
+                    <input 
+                        v-model="upPhone"
+                        type="text" 
+                        class="form-control" 
+                        placeholder="+55(00)00000-0000" 
+                        required/>
+                    <div class="invalid-feedback lh-condensed"> Please enter your phone number. </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="upAddress" class="form-label">Address</label>
+                    <input 
+                        v-model="upAddress"
+                        type="text" 
+                        class="form-control" 
+                        placeholder="1234 Main St" 
+                        required/>
                     <div class="invalid-feedback lh-condensed"> Please enter your shipping address. </div>
                 </div>
 
-                <div class="row mb-4">
+            <!-- <div class="row mb-4">
 
                 <div class="col-md-4 mb-4">
-                  <label for="country" class="form-label">Country</label>
-                    <select class="form-select form-select-lg" id="country" required="">
+                  <label for="upCountry" class="form-label">Country</label>
+                    <select v-model="upCountry" class="form-select form-select-lg" required>
                       <option selected disabled value="">Choose...</option>
                       <option value="1">Brazil</option>
-                      <option value="2">Japan</option>
-                      <option value="3">South Korea</option>
                   </select>
                   <div class="invalid-feedback lh-condensed"> Please select a <br> valid country. </div>
                 </div>
 
                 <div class="col-md-4 mb-4">
-                  <label for="country" class="form-label">State</label>
-                    <select class="form-select form-select-lg" id="country" required="">
-                    <option selected disabled value="">Choose...</option>
-                    <option value="1">Acre</option>
-                    <option value="2">São Paulo</option>
-                    <option value="3">Rio de Janeiro</option>
-                  </select>
+                  <label for="upState" class="form-label">State</label>
+                    <select v-model="upState" class="form-select form-select-lg" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option v-for="state in brazilStates" :key="state.value" :value="state.value">{{ state.text }}</option>
+                    </select>
                   <div class="invalid-feedback lh-condensed"> Please select a <br> valid state. </div>
                 </div>
 
               <div class="col-md mb-4">
-                  <label for="zip">Zip code</label>
-                  <input type="text" class="form-control" id="zip" placeholder="" required="">
+                  <label for="upZipcode">Zip code</label>
+                  <input 
+                    v-model="upZipCode"
+                    type="text" 
+                    class="form-control"
+                    placeholder="" 
+                    required/>
                   <div class="invalid-feedback lh-condensed"> Zip code required. </div>
               </div>
 
-            </div>
+            </div> -->
                 
             <hr class="mb-4">
 				
-				<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
-					Sign up
-				</button>
+            <button @click="register" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
+                Sign up
+            </button>
 				
             </form>
 			</div>
@@ -76,7 +114,7 @@
 
     <!------- Login form !------->
     <div class="form-container sign-in-container">
-      <div class="form-wrapper p-lr-70 p-t-100 p-b-10 p-lr-15-lg w-full">
+      <div class="form-wrapper p-lr-70 p-t-180 p-b-10 p-lr-15-lg w-full">
 				<h4 class="mtext-105 cl2 txt-left p-b-30">
 					Login
 				</h4>
@@ -84,24 +122,35 @@
 				<form class="needs-validation" novalidate="">
 
                 <div class="col-md mb-4">
-                    <label for="username" class="form-label">E-mail</label>
+                    <label for="inEmail" class="form-label">E-mail</label>
                     <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
                             <span class="input-group-text">@</span>
                         </div>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required="">
+                        <input
+                            v-model="inEmail"
+                            type="email" 
+                            class="form-control" 
+                            id="inEmail" 
+                            placeholder="you@example.com" 
+                            required/>
                         <div class="invalid-feedback lh-condensed" style="width: 100%;"> Your email is required. </div>
                     </div>
                 </div>
 
                 <div class="mb-4">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required="">
+                    <label for="inPassword" class="form-label">Password</label>
+                    <input 
+                        v-model="inPassword"
+                        type="password" 
+                        class="form-control" 
+                        placeholder="Enter your password" 
+                        required/>
                     <div class="invalid-feedback lh-condensed"> Please enter your password. </div>
                 </div>                
             <hr class="mb-4">
 				
-				<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
+				<button @click="login" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
 					Sign in
 				</button>
 				
@@ -128,19 +177,67 @@
 
 <script>
 
-// import AppLogin from '../components/LoginRegister/AppLogin.vue'
-// import AppRegister from '../components/LoginRegister/AppRegister.vue'
 export default {
     name:'LoginRegister',
-    data () {
-      return {
+    data(){
+
+      return{
         hidden: false,
+
+        /* Sign'in' variables */
+        inEmail:"",
+        inPassword:"",
+
+        /* Sign'up' variables */
+        upEmail:"",
+        upPassword:"",
+        upName:"",
+        upAddress:"",
+        upPhone:"",
+
+        // upCountry:"",
+        // upState:"",
+        // upZipCode:"",
+
+
+        // brazilStates: [
+        //     { text: 'Acre',                 value: 'AC' }, 
+        //     { text: 'Alagoas',              value: 'AL' }, 
+        //     { text: 'Amapá',                value: 'AP' }, 
+        //     { text: 'Amazonas',             value: 'AM' }, 
+        //     { text: 'Bahia',                value: 'BA' }, 
+        //     { text: 'Ceará',                value: 'CE' }, 
+        //     { text: 'Distrito Federal',     value: 'DF' }, 
+        //     { text: 'Espírito Santo',       value: 'ES' }, 
+        //     { text: 'Goiás',                value: 'GO' }, 
+        //     { text: 'Maranhão',             value: 'MA' }, 
+        //     { text: 'Mato Grosso',          value: 'MT' }, 
+        //     { text: 'Mato Grosso do Sul',   value: 'MS' }, 
+        //     { text: 'Minas Gerais',         value: 'MG' }, 
+        //     { text: 'Paraná',               value: 'PR' }, 
+        //     { text: 'Paraíba',              value: 'PB' }, 
+        //     { text: 'Pará',                 value: 'PA' }, 
+        //     { text: 'Pernambuco',           value: 'PE' }, 
+        //     { text: 'Piauí',                value: 'PI' }, 
+        //     { text: 'Rio de Janeiro',       value: 'RJ' }, 
+        //     { text: 'Rio Grande do Norte',  value: 'RN' }, 
+        //     { text: 'Rio Grande do Sul',    value: 'RS' }, 
+        //     { text: 'Rondonia',             value: 'RO' }, 
+        //     { text: 'Roraima',              value: 'RR' }, 
+        //     { text: 'Santa Catarina',       value: 'SC' }, 
+        //     { text: 'Sergipe',              value: 'SE' }, 
+        //     { text: 'São Paulo',            value: 'SP' }, 
+        //     { text: 'Tocantins',            value: 'TO' }
+        // ]
+
       }
+
     },
+
     components: {
-        // AppRegister,
-        // AppLogin
+
     },
+
     methods: {
         formValidation: function () { // Disable form submissions if there are invalid fields
         'use strict'
@@ -163,10 +260,51 @@ export default {
         slidePanel(){
           this.hidden = !this.hidden
         },
+
+        async login() {
+            await this.v$.$reset();
+            
+            await this.v$.inEmail.$touch();
+            await this.v$.inPassword.$touch();
+           
+             await this.$store.dispatch("auth", {
+                 email: this.inEmail,
+                 password: this.inPassword,
+             });
+             if (!this.$store.getters.getIsLogged) {
+                /* Notificar erro no login: email ou senha incorretos */
+             } else {
+                /* Notificar login com sucesso */
+                this.$router.push("/profile");
+             }
+         },
+
+        async register() {
+            await this.v$.$reset();
+            await this.v$.upEmail.$touch();
+            await this.v$.upName.$touch();
+            await this.v$.upPassword.$touch();
+            await this.v$.upPhone.$touch();
+
+            await this.$store.dispatch("register", {
+                name: this.upName,
+                email: this.upEmail,
+                password: this.upPassword,
+                address: this.upAddress,
+                phone: this.upPhone,
+            });
+            if (!this.$store.getters.getIsLogged) {
+                /* Notificar erro no cadastro */
+            } else {
+                /* Notificar cadastro com sucesso */
+                this.$router.push("/profile");
+            }
+         },
     },
+
 	beforeMount(){
 		this.formValidation()
-	},
+	}
 }
 </script>
 
@@ -210,9 +348,9 @@ form, .form-wrapper {
     background-color: #ffffff;
     position: relative;
     overflow: hidden;
-    width: 70em;
+    width: 75em;
     max-width: 100%;
-    min-height: 40em;
+    min-height: 50em;
 }
 
 .form-container {

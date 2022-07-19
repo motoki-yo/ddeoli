@@ -71,137 +71,86 @@
 	<!-- Slider -->
 
 	<!-- Banner -->
-	<div class="sec-banner bg0 p-t-95 p-b-55">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="../../public/assets/images/banner-01.jpg" alt="IMG-BANNER">
+	<div class="container-fluid p-t-25 p-b-20">
+		<div class="row">
+			<div class="col-md-6 m-lr-auto">
+				<!-- Block1 -->
+				<div class="block1 wrap-pic-w">
+					<img src="../../public/assets/images/banner-01.jpg" alt="IMG-BANNER">
 
-						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Women
-								</span>
+					<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<div class="block1-txt-child1 flex-col-l">
+							<span class="block1-name ltext-102 trans-04 p-b-8">
+								Synk Dive
+							</span>
 
-								<span class="block1-info stext-102 trans-04">
-									New Trend
-								</span>
+							<span class="block1-info stext-102 trans-04">
+								New Trend
+							</span>
+						</div>
+
+						<div class="block1-txt-child2 p-b-4 trans-05">
+							<div class="block1-link stext-101 cl0 trans-09">
+								Shop Now
 							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="../../public/assets/images/banner-02.jpg" alt="IMG-BANNER">
-
-						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Men
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									New Trend
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="../../public/assets/images/banner-07.jpg" alt="IMG-BANNER">
-
-						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Synk Dive
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									너의 약점에다!
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="../../public/assets/images/banner-08.jpg" alt="IMG-BANNER">
-
-						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Wildside
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									本能で do it
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-md-6 col-lg-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
-					<div class="block1 wrap-pic-w">
-						<img src="../../public/assets/images/banner-09.jpg" alt="IMG-BANNER">
-
-						<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8">
-									Maniac
-								</span>
-
-								<span class="block1-info stext-102 trans-04">
-									Frankenstein처럼
-								</span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">
-									Shop Now
-								</div>
-							</div>
-						</a>
-					</div>
+						</div>
+					</a>
 				</div>
 			</div>
+
+			<div class="col-md-6 m-lr-auto">
+				<!-- Block1 -->
+				<div class="block1 wrap-pic-w">
+					<img src="../../public/assets/images/banner-02.jpg" alt="IMG-BANNER">
+
+					<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<div class="block1-txt-child1 flex-col-l">
+							<span class="block1-name ltext-102 trans-04 p-b-8">
+								Wildside
+							</span>
+
+							<span class="block1-info stext-102 trans-04">
+								New Trend
+							</span>
+						</div>
+
+						<div class="block1-txt-child2 p-b-4 trans-05">
+							<div class="block1-link stext-101 cl0 trans-09">
+								Shop Now
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-md-12 p-t-30 p-b-20 m-lr-auto">
+				<!-- Block1 -->
+				<div class="block1 wrap-pic-w">
+					<img src="../../public/assets/images/banner-07.jpg" alt="IMG-BANNER">
+
+					<a href="/shop-all" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+						<div class="block1-txt-child1 flex-col-l">
+							<span class="block1-name ltext-102 trans-04 p-b-8">
+								Maniac
+							</span>
+
+							<span class="block1-info stext-102 trans-04">
+								New Trend
+							</span>
+						</div>
+
+						<div class="block1-txt-child2 p-b-4 trans-05">
+							<div class="block1-link stext-101 cl0 trans-09">
+								Shop Now
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
 		</div>
 	</div>
-  </div>
+</div>
 </template>
 
 <script>
