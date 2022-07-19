@@ -235,24 +235,24 @@ export default createStore({
         {
           id : 2,
           name : "Juca Tico Teco",
-          address : "Av. Não Sei, 69",
-          email : "queromorrer@gmail.com",
+          address : "Rua Episcopal, 2369",
+          email : "galactica@gmail.com",
           phone : "5511912345678",
           isAdmin: true
         },
         {
           id : 3,
-          name : "Isadora P. Oliveira",
-          address : "Puta Que Te Pariu, 293",
-          email : "naoaguentomais@yahoo.com.br",
+          name : "Julia P. Oliveira",
+          address : "Avenida Trabalhador São Carlense, 293",
+          email : "juliapoliveira@yahoo.com.br",
           phone : "5577123456789",
           isAdmin: false
         },
         {
           id : 4,
           name : "Wagner Soares Jr.",
-          address : "Um Endereço bem Legal",
-          email : "seilaporra@uol.com.br",
+          address : "Rua José Bonifácio, 293",
+          email : "randomemailjr@uol.com.br",
           phone : "5566789012345",
           isAdmin: true
         },
