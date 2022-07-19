@@ -55,7 +55,7 @@ Ainda, foram utilizados os frameworks Bootstrap 5 e MDBootstrap 5 para o desenvo
 Para o funcionamento do backend estamos usando MongoDB e Expres, para o frontend estamos usando VueJS (na versão 3) e Axios.
 
 ## Estrutura (Diagrama de Navegação)
-![Screenshot](front/git-resources/Sitemap.png)
+![Screenshot](front/git-resources/Sitemap1.png)
 
 ## Plano de teste
 
