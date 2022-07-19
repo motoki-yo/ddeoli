@@ -22,11 +22,11 @@
 			<!-- filter doesn't work yet (and probably never will!) !-->
 			<div class="flex-w flex-sb-m p-b-52">
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*" onclick="filterSelection('all')">
 						All Products
 					</button>
 
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".synkdive-collection">
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".synkdive-collection" onclick="filterSelection('synkdive-collection')">
 						Synk Dive
 					</button>
 
@@ -54,7 +54,7 @@
 
 			<!-- PRODUCT GALLERY !-->
 			<div class="row isotope-grid">
-				<ProductSingle v-for="product in products" :product="product" :key="product.id" />
+				<ProductSingle v-for="product in products" :product="product" :key="product.id"/>
 			</div>
 		</div>
 	</div>
@@ -73,19 +73,16 @@ export default {
 	name: 'ShopAll',
 	components: {
 		ProductSingle,
-		// Cart
 	},
     setup(){
     const store = useStore();
-    let products = computed(function () {
+	
+	let products = computed(function () {
       return store.state.products
     });
-    // let cart = computed(function () {
-    //   return store.state.cart
-    // });
+
     return {
-      products,
-    //   cart
+		products,
     }
   }
 }
@@ -93,5 +90,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

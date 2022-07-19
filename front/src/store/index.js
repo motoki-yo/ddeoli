@@ -126,34 +126,34 @@
 // })
 
 import { createStore } from "vuex";
-import createPersistedState from "vuex-persistedstate";
-import SecureLS from "secure-ls";
+// import createPersistedState from "vuex-persistedstate";
+// import SecureLS from "secure-ls";
 
 /* =========== MODULES =========== */
-import cart from './modules/cart';
-import user from './modules/user';
-import products from './modules/products';
-import orders from './modelus/orders'
+// import cart from './modules/cart';
+// import user from './modules/user';
+// import products from './modules/products';
+// import orders from './modelus/orders'
 
-const ls = new SecureLS({ isCompression: false });
+// const ls = new SecureLS({ isCompression: false });
 
-export default createStore({
-  modules: [
-    cart,
-    user,
-    products,
-    orders
-  ],
-  plugins: [
-    createPersistedState({
-      storage: {
-        getItem: (key) => ls.get(key),
-        setItem: (key, value) => ls.set(key, value),
-        removeItem: (key) => ls.remove(key),
-      },
-    }),
-  ],
-});
+// export default createStore({
+//   modules: [
+//     cart,
+//     user,
+//     products,
+//     orders
+//   ],
+//   plugins: [
+//     createPersistedState({
+//       storage: {
+//         getItem: (key) => ls.get(key),
+//         setItem: (key, value) => ls.set(key, value),
+//         removeItem: (key) => ls.remove(key),
+//       },
+//     }),
+//   ],
+// });
 
 export default createStore({
   state: {
@@ -162,6 +162,7 @@ export default createStore({
             id : 1,
             name : "Chelsea Shoes",
             price : 200,
+            collectionType: "synkdive-collection",
             shortdesc : "Best Drip in the Market",
             url : "./assets/images/product-01.jpg"
           },
@@ -169,6 +170,7 @@ export default createStore({
             id : 2,
             name : "Kimono",
             price : 50,
+            collectionType: "wildside-collection",
             shortdesc : "Classy, Stylish, Dope",
             url : "./assets/images/product-02.jpg"
           },
@@ -176,6 +178,7 @@ export default createStore({
             id : 3,
             name : "Watch",
             price : 2500,
+            collectionType: "maniac-collection",
             shortdesc : "Elegance built in",
             url : "./assets/images/product-03.jpg"
           },
@@ -183,6 +186,7 @@ export default createStore({
             id : 4,
             name : "Wallet",
             price : 80,
+            collectionType: "synkdive-collection",
             shortdesc : "Sleek, Trendy, Clean",
             url : "./assets/images/product-04.jpg"
           },
@@ -190,6 +194,7 @@ export default createStore({
             id : 5,
             name : "Lady Handbags",
             price : 230,
+            collectionType: "wildside-collection",
             shortdesc : "Fabulous, Exotic, Classy",
             url : "./assets/images/product-05.jpg"
           },
@@ -197,6 +202,7 @@ export default createStore({
             id : 6,
             name : "Casual Shirts",
             price : 30,
+            collectionType: "maniac-collection",
             shortdesc : "Neat, Sleek, Smart",
             url : "./assets/images/product-06.jpg"
           }
