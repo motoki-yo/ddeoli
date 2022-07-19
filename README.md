@@ -52,8 +52,7 @@ O nome _ddeoli (떨이)_ é uma palavra da língua coreana. O termo refere-se ao
 Utilizou-se o padrão de projeto do VueJS (na versão 3) com pastas: components, views, assets, css globais.
 Ainda, foram utilizados os frameworks Bootstrap 5 e MDBootstrap 5 para o desenvolvimento responsivo.
 
-`Foi usado localStorage para simular o funcionamento do backend. Além de um arquivo de dados, ao invés dos dados do banco.`
-
+Para o funcionamento do backend estamos usando MongoDB e Expres, para o frontend estamos usando VueJS (na versão 3) e Axios.
 
 ## Estrutura (Diagrama de Navegação)
 ![Screenshot](front/git-resources/Sitemap.png)
@@ -63,15 +62,15 @@ Ainda, foram utilizados os frameworks Bootstrap 5 e MDBootstrap 5 para o desenvo
 Os testes foram realizados manualmente.
 
 Para o teste das implementações de páginas:
-1. Compra:
+* **1. Compra:**
     
     O usuário pode adicionar e remover produtos do carrinho. Os produtos podem ser adicionados pela página de um produto específico.
 
-2. Admin:
+* **2. Admin:**
 
     Ao entrar na página de admin o usuário precisa ter a permissão necessária para poder logar. Ao logar ele pode acessar as páginas de produto, admins e usuários. Nessas temos um menu responsivo para adição, edição e remoção de produtos, admins ou usuários.
 
-3. Novas informações para o usuário:
+* **3. Novas informações para o usuário:**
 
     Entrando na página do perfil do usuário o mesmo pode adicionar ou editar endereços para entrega e informações gerais.
 
@@ -79,27 +78,36 @@ Para o teste das implementações de páginas:
 Após a realização dos testes não ocorreu nada fora do esperado.
 
 Resultado do teste de algums as páginas:
-1. Compra:
+* **1. Compra:**
 
    <img src="https://user-images.githubusercontent.com/64448792/179791601-7254f7ad-9494-45a7-9654-e0c8e87e6060.png" width="800">
    <img src="https://user-images.githubusercontent.com/64448792/179791830-068afe46-ac71-4b88-97b8-fbbf2aea0f78.png" width="800">
    
-2. Admin:
+* **2. Admin:**
    
-   2.1: Adicionar,editar ou remover usuário/adm
+   * **2.1: Adicionar,editar ou remover usuário/adm**
    
-   <img src="https://user-images.githubusercontent.com/64448792/179792284-99bdaca6-a4bd-4103-8497-e2d3943191d8.png" width="800">
+      <img src="https://user-images.githubusercontent.com/64448792/179792284-99bdaca6-a4bd-4103-8497-e2d3943191d8.png" width="800">
    
-   2.2 Adicionar, editar ou remover produto
+   * **2.2 Adicionar, editar ou remover produto**
    
-   <img src="https://user-images.githubusercontent.com/64448792/179792453-ae03b236-1966-42ff-985f-2d18cc43d64e.png" width="800">
+      <img src="https://user-images.githubusercontent.com/64448792/179792453-ae03b236-1966-42ff-985f-2d18cc43d64e.png" width="800">
    
-   2.3 Adicionar, editar ou remover pedido
+   * **2.3 Adicionar, editar ou remover pedido**
    
-   <img src="https://user-images.githubusercontent.com/64448792/179792719-b2795f2a-8ef3-469c-99b0-54e1b82bec85.png" width="800">
+      <img src="https://user-images.githubusercontent.com/64448792/179792719-b2795f2a-8ef3-469c-99b0-54e1b82bec85.png" width="800">
 
 
-3. Novas informações para o usuário:
+* **3. Novas informações para o usuário:**
+   
+   * **3.1 Perfil**
+
+   <img src="https://user-images.githubusercontent.com/64448792/179793559-540a1d4f-c481-4fc9-91be-60367a5672a3.png" width="800">
+   <img src="https://user-images.githubusercontent.com/64448792/179793845-c1757f07-f60d-424f-b574-6ab54f8e9dd3.png" width="800">
+   
+   * **3.2 Pedidos**
+
+   <img src="https://user-images.githubusercontent.com/64448792/179794280-210ccc9d-c509-4bcb-956e-fc6e8a800654.png" width="800">
 
 ## Procedimento de compilação
 
