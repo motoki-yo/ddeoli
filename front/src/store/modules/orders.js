@@ -77,7 +77,7 @@ const actions = {
 }
 
 const getters = {
-    getProducts(state) {
+    getOrders(state) {
         return state.orders
     },
 }

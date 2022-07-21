@@ -216,7 +216,7 @@
                             </div>						
                         </div>
                         <div class="modal-footer modal__action">
-                            <button @click="update()" class="btn btn-success" type="button">Save changes</button>
+                            <button @click="update" class="btn btn-success" type="button">Save changes</button>
                             <button @click="showEditProductModal = false" class="btn btn-default">Cancel</button>
                         </div>
                     </form>
@@ -240,7 +240,7 @@
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
                             <div class="modal-footer modal__action">
-                                <button @click="deleteUser; showDeleteProductModal = false" class="btn btn-success">Delete</button>
+                                <button @click="deleteProduct" class="btn btn-success">Delete</button>
                                 <button @click="showDeleteProductModal = false" class="btn btn-default">Cancel</button>
                             </div>
                     </form>
