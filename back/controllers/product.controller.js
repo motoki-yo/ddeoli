@@ -79,15 +79,16 @@ export async function update(req, res) {
 };
 
 export async function remove(req, res) {
-    const { _id } = req.body;
+    const id = req.body.id;
+    console.log(req.body)
 
     try {
         const count = await ProductModel.findByIdAndDelete(id);
         if (!count) return res.status(500).send("Product not found");            
-        window.alert("Delete successful!");
+        //window.alert("Delete successful!");
         return res.status(200).send({message: "Delete succesful"});
     } catch(e) {
-        window.alert(console.log(e));
+        //window.alert(console.log(e));
         return res.status(500).send({'error': 'delete error'});
     }
 };

@@ -80,7 +80,8 @@ const actions = {
             })
     },
 
-    async delete({commit}, payload) {
+    async deleteProducts({commit}, payload) {
+        console.log(payload)
         await api 
             .put(`/product/d/delete`,
             { id : payload._id }, {

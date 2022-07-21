@@ -49,7 +49,7 @@
                                 <td> {{ product.sizes.join(', ') }}</td>
                                 <td>
                                     <button productTable="product" @click="sendProductInfoModal(product); showEditProductModal = true"  class="edit" data-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></button>
-                                    <button @click="showDeleteProductModal = true"  class="delete" data-toggle="modal"><i class="fa-solid fa-trash"></i></button>
+                                    <button @click="sendProductInfoModal(product); showDeleteProductModal = true"  class="delete" data-toggle="modal"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
                             
@@ -240,7 +240,7 @@
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
                             <div class="modal-footer modal__action">
-                                <button @click="deleteProduct" class="btn btn-success">Delete</button>
+                                <button @click="deleteProduct" class="btn btn-success" type="button">Delete</button>
                                 <button @click="showDeleteProductModal = false" class="btn btn-default">Cancel</button>
                             </div>
                     </form>
@@ -305,7 +305,11 @@ export default {
             this.$store.dispatch("deleteProduct", payload)
         },
         deleteProduct() {
-            this.$store.dispatch("delete", this.selectedProduct)
+            console.log(this.selectedProduct)
+            this.$store.dispatch("deleteProducts", this.selectedProduct).then(() => {
+                window.location.reload();
+            });
+
         },
         update() {
             this.$store.dispatch("updateProduct", this.selectedProduct).then(() => {

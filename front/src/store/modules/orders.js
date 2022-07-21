@@ -58,7 +58,7 @@ const actions = {
     },
 
 
-    async delete({commit}, payload) {
+    async deleteOrder({commit}, payload) {
         await api 
             .put(`/order/d/delete`,
             { id : payload._id }, {

@@ -49,7 +49,7 @@ export async function getOrder(req, res) {
 };
 
 export async function remove(req, res) {
-    const { _id } = req.body;
+    const id = req.body;
 
     try {
         const count = await OrderModel.findByIdAndDelete(id);
