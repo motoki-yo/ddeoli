@@ -38,9 +38,10 @@ export async function getAllProducts(req, res) {
 };
 
 export async function getProduct(req, res) {
-    const { id } = req.params.id;
+    const id = req.params.id;
+    console.log(req.params.id)
     try {
-        const product = await ProductModel.findOne({ id });
+        const product = await ProductModel.findById(id);
         if(!product) { 
             return res.status(500).send({'error': 'Product not found'});
         }

@@ -58,8 +58,8 @@
 			</tr>
 
 			<!-- PRODUCT GALLERY !-->
-			<div v-else  class="row isotope-grid">
-				<ProductSingle v-for="product in products" :product="product" :key="product.id"/>
+			<div class="row isotope-grid">
+				<ProductSingle v-for="product in products" :product="product" :key="product._id"/>
 			</div>
 		</div>
 	</div>
@@ -69,9 +69,7 @@
 
 <script>
 
-
-import {computed} from 'vue';
-import {useStore} from "vuex";
+// import Cart from "../components/Cart.vue";
 
 import ProductSingle from "../components/ShopAll/ProductSingle.vue";
 
@@ -80,33 +78,15 @@ export default {
 	
 	components: {
 		ProductSingle,
+	}, 
+	created() {
+		this.$store.dispatch("allProducts")
 	},
-    setup(){
-    const store = useStore();
-	
-	store.dispatch("allProducts")
-	let test = computed(function () {
-	return store.state.test
-	});
-
-	return {
-		test,
-	}
-  },
 	computed: {
 		products() {
-			return this.$store.getters.getProducts;
+            return this.$store.getters.getProducts;
 		}
-	},
-
-    data () {
-        return {
-
-        }
-    },
-
-    methods: {
-    }
+	}
 }
 </script>
 
