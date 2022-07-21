@@ -132,6 +132,7 @@ import createPersistedState from "vuex-persistedstate";
 /* =========== MODULES =========== */
 // import cart from './modules/cart';
 import user from './modules/user';
+import products from './modules/products'
 // import products from './modules/products';
 // import orders from './modelus/orders'
 
@@ -159,105 +160,9 @@ export default createStore({
   plugins: [createPersistedState()],
   modules: [
     user,
+    products,
   ],
   state: {
-    products : [
-        {
-          id : 1,
-          name : "Chelsea Shoes",
-          price : 200,
-          collectionType: "Synk Dive",
-          description : "Best Drip in the Market",
-          img : "./assets/images/product-01.jpg",
-          qtyInInventory: 23,
-          sizes: ['S','M','L','XL']
-        },
-        {
-          id : 2,
-          name : "Kimono",
-          price : 50,
-          collectionType: "Wildside",
-          description : "Classy, Stylish, Dope",
-          img : "./assets/images/product-02.jpg",
-          qtyInInventory: 4345,
-          sizes: ['S','M','L','XL']
-        },
-        {
-          id : 3,
-          name : "Watch",
-          price : 2500,
-          collectionType: "Maniac",
-          description : "Elegance built in",
-          img : "./assets/images/product-03.jpg",
-          qtyInInventory: 32,
-          sizes: ['XS','M','L','XL']
-        },
-        {
-          id : 4,
-          name : "Wallet",
-          price : 80,
-          collectionType: "Synk Dive",
-          description : "Sleek, Trendy, Clean",
-          img : "./assets/images/product-04.jpg",
-          qtyInInventory: 12,
-          sizes: ['S','M','XL']
-        },
-        {
-          id : 5,
-          name : "Lady Handbags",
-          price : 230,
-          collectionType: "Wildside",
-          description : "Fabulous, Exotic, Classy",
-          img : "./assets/images/product-05.jpg",
-          qtyInInventory: 123,
-          sizes: ['S','M','L']
-        },
-        {
-          id : 6,
-          name : "Casual Shirts",
-          price : 30,
-          collectionType: "Maniac",
-          description : "Neat, Sleek, Smart",
-          img : "./assets/images/product-06.jpg",
-          qtyInInventory: 432,
-          sizes: ['XS','S','L','XL']
-        }
-    ],
-
-    users : [
-        {
-          id : 1,
-          name : "Lynn Lapid",
-          address : "Av. São Carlos, 123",
-          email : "lynn@usp.br",
-          phone : "5514999999999",
-          isAdmin: false
-        },
-        {
-          id : 2,
-          name : "Juca Tico Teco",
-          address : "Rua Episcopal, 2369",
-          email : "galactica@gmail.com",
-          phone : "5511912345678",
-          isAdmin: true
-        },
-        {
-          id : 3,
-          name : "Julia P. Oliveira",
-          address : "Avenida Trabalhador São Carlense, 293",
-          email : "juliapoliveira@yahoo.com.br",
-          phone : "5577123456789",
-          isAdmin: false
-        },
-        {
-          id : 4,
-          name : "Wagner Soares Jr.",
-          address : "Rua José Bonifácio, 293",
-          email : "randomemailjr@uol.com.br",
-          phone : "5566789012345",
-          isAdmin: true
-        },
-    ],
 
     cart : [
       {

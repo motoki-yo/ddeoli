@@ -1,7 +1,7 @@
 import ProductModel from '../models/product.model.js';
 
 export async function register(req, res) {
-    const { name, description, collectionType, price, sizes, qtyInInventory } = req.body;
+    const { name, description, collectionType, price, sizes, qtyInInventory, img } = req.body;
     try {
         let newProduct = new ProductModel({
             name : name,
@@ -9,7 +9,8 @@ export async function register(req, res) {
             collectionType : collectionType,
             price : price,
             sizes: sizes,
-            qtyInInventory : qtyInInventory
+            qtyInInventory : qtyInInventory,
+            img : img
         });
 
         const createdProduct = newProduct.save()
@@ -23,9 +24,8 @@ export async function register(req, res) {
 };
 
 export async function getAllProducts(req, res) {
-    const { id } = req.params.id;
     try {
-        const product = await ProductModel.findOne({ id });
+        const product = await ProductModel.find({  });
         if(!product) { 
             return res.status(500).send({'error': 'Product not found'});
         }
@@ -54,18 +54,19 @@ export async function getProduct(req, res) {
 
 export async function update(req, res) {
     const { name, description, collectionType, price, sizes, qtyInInventory } = req.body;
+    console.log(req.body)
     const id = req.params.id;
 
     try {
         const product = await ProductModel.findById(id);
         if (!product) return res.status(500).send("Product not found");            
 
-        product.name = name && name.trim() !== "" ? name : product.name;
-        product.description = description && description.trim() !== "" ? description : product.description;
-        product.collectionType = collectionType && collectionType.trim() !== "" ? collectionType : product.collectionType;
-        product.price = price && price.trim() !== "" ? price : product.price;
-        product.sizes = sizes && sizes.trim() !== "" ? sizes : product.sizes;
-        product.qtyInInventory = qtyInInventory && qtyInInventory.trim() !== "" ? qtyInInventory : product.qtyInInventory;
+        product.name = name;
+        product.description = description;
+        product.collectionType = collectionType;
+        product.price = price;
+        product.sizes = sizes;
+        product.qtyInInventory = qtyInInventory;
         
 
         const updatedProduct = await product.save();
@@ -73,5 +74,19 @@ export async function update(req, res) {
     } catch(e) {
         console.log(e)
         return res.status(500).send({'error': 'update error'});
+    }
+};
+
+export async function remove(req, res) {
+    const { _id } = req.body;
+
+    try {
+        const count = await ProductModel.findByIdAndDelete(id);
+        if (!count) return res.status(500).send("Product not found");            
+
+        return res.status(200).send({message: "Delete succesful"});
+    } catch(e) {
+        console.log(e)
+        return res.status(500).send({'error': 'delete error'});
     }
 };

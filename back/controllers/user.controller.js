@@ -21,6 +21,7 @@ export async function register(req, res) {
             phone : phone,
             address : address
         });
+        console.log(password)
         newUser.hash_password = await bcrypt.hash(password, 10);
 
         const createdUser = newUser.save()
@@ -58,7 +59,7 @@ export async function login(req, res) {
 };
 
 export async function update(req, res) {
-    const { email, name, address, phone, oldPassword, newPassword } = req.body;
+    const { email, name, address, phone, oldPassword, newPassword, isAdmin } = req.body;
     console.log(req.body)
     const id = req.params.id;
 
@@ -78,7 +79,7 @@ export async function update(req, res) {
         user.name = name;
         user.address = address;
         user.phone = phone;
-        console.log(user.name)
+        user.isAdmin = isAdmin;
 
         const updatedUser = await user.save();
         return res.status(200).send({updatedUser});
@@ -113,5 +114,17 @@ export async function getUser(req, res) {
     } catch(e) {
         console.log(e)
         return res.status(500).send({'error': 'update error'});
+    }
+};
+
+export async function getUsers(req, res) {
+    try {
+        const users = await UserModel.find({});
+        if (!users) return res.status(500).send("Users not found");            
+
+        return res.status(200).send(users);
+    } catch(e) {
+        console.log(e)
+        return res.status(500).send({'error': 'find error'});
     }
 };

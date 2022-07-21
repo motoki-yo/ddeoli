@@ -7,6 +7,6 @@ import orderRouter from './order.router.js';
 const router = express.Router();
 router.use('/user', userRouter);
 router.use('/product', productRouter);
-router.use('/product', orderRouter);
+router.use('/order', orderRouter);
 
 export default router;

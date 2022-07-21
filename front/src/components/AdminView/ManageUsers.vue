@@ -12,7 +12,7 @@
                             </div>
 
                             <div class="col">
-                                <button @click="showAddUserModal = true" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-circle-plus"></i> <span>Add New User</span></button>
+                                <button v-if="false" @click="showAddUserModal = true" class="btn btn-success" data-toggle="modal"><i class="fa-solid fa-circle-plus"></i> <span>Add New User</span></button>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                                 <td>{{ user.isAdmin ? "Admin" : "Client"}}</td>
                                 <td>
                                     <button userTable="user" @click="sendUserInfoModal(user); showEditUserModal = true"  class="edit" data-toggle="modal"><i class="fa-solid fa-pen-to-square"></i></button>
-                                    <button @click="showDeleteUserModal = true"  class="delete" data-toggle="modal"><i class="fa-solid fa-trash"></i></button>
+                                    <button @click="sendUserInfoModal(user); showDeleteUserModal = true"  class="delete" data-toggle="modal"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
 
@@ -114,30 +114,30 @@
                         <div class="modal-body">					
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" :value="selectedUser.name" required>
+                                <input type="text" class="form-control" v-model="selectedUser.name" required>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="email" class="form-control" :value="selectedUser.email" required>
+                                <input type="email" class="form-control" v-model="selectedUser.email" required>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <textarea class="form-control" :value="selectedUser.address" required></textarea>
+                                <textarea class="form-control" v-model="selectedUser.address"  required></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="text" class="form-control" :value="selectedUser.phone" required>
+                                <input type="text" class="form-control" v-model="selectedUser.phone"  required>
                             </div>
                             <div class="form-group">
                                 <label>Role</label>
-                                <select class="form-select form-control" aria-label="Default select example" required>
+                                <select v-model="selectedAdmin" class="form-select form-control" aria-label="Default select example" required>
                                     <option value="false" :selected="!selectedUser.isAdmin">Client</option>
                                     <option value="true" :selected="selectedUser.isAdmin">Admin</option>
                                 </select>
                             </div>  					
                         </div>
                         <div class="modal-footer modal__action">
-                            <button @click="showModal = false" class="btn btn-success">Save changes</button>
+                            <button @click="updateUser" class="btn btn-success">Save changes</button>
                             <button @click="showEditUserModal = false" class="btn btn-default">Cancel</button>
                         </div>
                     </form>
@@ -161,7 +161,7 @@
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
                             <div class="modal-footer modal__action">
-                                <button @click="showDeleteUserModal = false" class="btn btn-success">Delete</button>
+                                <button @click="deleteUser" class="btn btn-success" type="button">Delete</button>
                                 <button @click="showDeleteUserModal = false" class="btn btn-default">Cancel</button>
                             </div>
                     </form>
@@ -174,7 +174,6 @@
 </template>
 
 <script>
-import {computed} from 'vue';
 import {useStore} from "vuex";
 
 import { VueFinalModal } from 'vue-final-modal'
@@ -189,14 +188,7 @@ export default {
 
     setup(){
         const store = useStore();
-        
-        let users = computed(function () {
-        return store.state.users
-        });
-
-        return {
-            users,
-        }
+        store.dispatch("allUsers");
     },
     
     data () {
@@ -206,13 +198,30 @@ export default {
             showEditUserModal:false,
             showDeleteUserModal:false,
             selectedUser: '',
+            selectedAdmin: false,
+        }
+    },
+    computed: {
+        users() {
+            return this.$store.getters.getUsers
         }
     },
 
     methods: {
         sendUserInfoModal(tableUser) {
             this.selectedUser = tableUser;
-        }
+        },
+        updateUser() {
+            this.selectedUser.id = this.selectedUser._id;
+            this.selectedUser.isAdmin = this.selectedAdmin;
+
+            this.$store.dispatch("update", this.selectedUser).then(() => {
+                window.location.reload();
+            });
+        },
+        deleteUser() {
+            this.$store.dispatch("delete", this.selectedUser)
+        },
     }
 }
 </script>

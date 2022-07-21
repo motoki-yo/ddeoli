@@ -73,64 +73,72 @@
                         <div class="modal-body">	
                             <div class="form-group">
                                 <label>Image</label>
-                                <input type="file" class="form-control" required>
+                                <input type="text" v-model="newImg" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text"  v-model="newName" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Collection</label>
-                                <select class="form-select form-control" aria-label="Default select example" required>
+                                <select v-model="newCollection" class="form-select form-control" aria-label="Default select example" required>
                                     <option selected disabled>Open this select menu</option>
-                                    <option value="1">Synk Dive</option>
-                                    <option value="2">Wildside</option>
-                                    <option value="3">Maniac</option>
+                                    <option value="Synk Dive">Synk Dive</option>
+                                    <option value="Wildside">Wildside</option>
+                                    <option value="Maniac">Maniac</option>
                                 </select>
                             </div>                            				
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label>Price</label>
-                                    <input type="text" class="form-control" required>
+                                    <input v-model="newPrice" type="text" class="form-control" required>
                                 </div>
                                 <div class="form-group col-6">
                                     <label>Quantity in stock</label>
-                                    <input type="text" class="form-control" required>
+                                    <input v-model="newQty" type="text" class="form-control" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                               <textarea class="form-control" required></textarea>
+                               <textarea v-model="newDesc" class="form-control" required></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label>Sizes</label>
                                 <div class="check-wrap">
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                    <input v-model="sizes" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="XS">
                                     <label class="form-check-label" for="inlineCheckbox1">XS</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                    <input v-model="sizes" class="form-check-input" type="checkbox" id="inlineCheckbox2" value="S">
                                     <label class="form-check-label" for="inlineCheckbox2">S</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                    <input v-model="sizes" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="M">
                                     <label class="form-check-label" for="inlineCheckbox3">M</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                    <input v-model="sizes" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="L">
                                     <label class="form-check-label" for="inlineCheckbox3">L</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                    <input v-model="sizes" class="form-check-input" type="checkbox" id="inlineCheckbox3" value="XL">
                                     <label class="form-check-label" for="inlineCheckbox3">XL</label>
                                     </div>
                                 </div>
                             </div>						
                         </div>
                         <div class="modal-footer modal__action">
-                            <button @click="showModal = false" class="btn btn-success">Add</button>
+                            <button @click="create({
+                                    newImg:newImg,
+                                    newName:newName,
+                                    newPrice:newPrice,
+                                    newQty:newQty,
+                                    newDescription:newDesc,
+                                    newCollection:newCollection,
+                                    sizes: sizes,
+                           })" class="btn btn-success" type="button">Add</button>
                             <button @click="showAddProductModal = false" class="btn btn-default">Cancel</button>
                         </div>
                     </form>
@@ -152,15 +160,15 @@
                         <div class="modal-body">	
                             <div class="form-group">
                                 <label>Image</label>
-                                <input type="file" class="form-control" required>
+                                <input type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" :value="selectedProduct.name" required>
+                                <input type="text" class="form-control" v-model="selectedProduct.name" required>
                             </div>
                             <div class="form-group">
                                 <label>Collection</label>
-                                <select class="form-select form-control" aria-label="Default select example">
+                                <select v-model="selectedProduct.collectionType" class="form-select form-control" aria-label="Default select example">
                                     <option value="Synk Dive" :selected= " selectedProduct.collectionType === 'Synk Dive' ">Synk Dive</option>
                                     <option value="Wildside" :selected= " selectedProduct.collectionType === 'Wildside' ">Wildside</option>
                                     <option value="Maniac" :selected= " selectedProduct.collectionType === 'Maniac' ">Maniac</option>
@@ -169,16 +177,16 @@
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label>Price</label>
-                                    <input type="text" class="form-control" :value="selectedProduct.price" required>
+                                    <input type="text" class="form-control" v-model="selectedProduct.price" required>
                                 </div>
                                 <div class="form-group col-6">
                                     <label>Quantity in stock</label>
-                                    <input type="text" class="form-control" :value="selectedProduct.qtyInInventory" required>
+                                    <input type="text" class="form-control" v-model="selectedProduct.qtyInInventory" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                               <textarea class="form-control" :value="selectedProduct.description" required></textarea>
+                               <textarea class="form-control" v-model="selectedProduct.description" required></textarea>
                             </div>
 
                             <div class="form-group">
@@ -208,7 +216,7 @@
                             </div>						
                         </div>
                         <div class="modal-footer modal__action">
-                            <button @click="showEditProductModal = false" class="btn btn-success">Save changes</button>
+                            <button @click="update()" class="btn btn-success" type="button">Save changes</button>
                             <button @click="showEditProductModal = false" class="btn btn-default">Cancel</button>
                         </div>
                     </form>
@@ -228,11 +236,11 @@
                             </button>
                         </div>
                         <div class="modal-body">					
-                            <p>Are you sure you want to delete these Records?</p>
+                            <p>Are you sure you want to delete these Products?</p>
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
                             <div class="modal-footer modal__action">
-                                <button @click="showDeleteProductModal = false" class="btn btn-success">Delete</button>
+                                <button @click="remove(product)" class="btn btn-success">Delete</button>
                                 <button @click="showDeleteProductModal = false" class="btn btn-default">Cancel</button>
                             </div>
                     </form>
@@ -253,7 +261,6 @@ import { VueFinalModal } from 'vue-final-modal'
 
 export default {
     name:'ManageProducts',
-    props : ['product'],
 
     components: {
         VueFinalModal,
@@ -262,12 +269,18 @@ export default {
     setup(){
         const store = useStore();
         
-        let products = computed(function () {
-        return store.state.products
+        store.dispatch("allProducts")
+        let test = computed(function () {
+        return store.state.test
         });
 
         return {
-            products,
+            test,
+        }
+    },
+    computed: {
+        products() {
+            return this.$store.getters.getProducts;
         }
     },
 
@@ -278,13 +291,32 @@ export default {
             showEditProductModal:false,
             showDeleteProductModal:false,
             selectedProduct: '',
+            newImg: '',
+            newName: '',
+            newCollection: '',
+            newPrice: '',
+            newQty: '',
+            newDesc: '',
+            sizes: [],
         }
     },
 
     methods: {
         sendProductInfoModal(tableProduct) {
             this.selectedProduct = tableProduct;
-        }
+        },
+        create(payload) {
+            this.$store.dispatch("registerProduct", payload)
+        },
+        remove(payload) {
+            this.$store.dispatch("deleteProduct", payload)
+        },
+        update() {
+            console.log("eu vou me matar")
+            this.$store.dispatch("updateProduct", this.selectedProduct).then(() => {
+                window.location.reload();
+            });
+        },
     }
 
 

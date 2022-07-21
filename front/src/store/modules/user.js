@@ -23,7 +23,8 @@ const state = () => ({
         address: "",
         phone: "",
         id: "",
-    }
+    },
+    users: []
 })
 
 // MUTATIONS
@@ -45,6 +46,9 @@ const mutations = {
     },
     setId(state, payload) {
         state.user.id = payload
+    },
+    setUsers(state, payload) {
+        state.users = payload
     },
 }
 
@@ -98,18 +102,14 @@ const actions = {
                 name: payload.name,
                 phone: payload.phone,
                 address: payload.address,
+                isAdmin: payload.isAdmin,
                 },{
                     headers: {
                     'x-access-token': getCookie("accessToken")
                     }
                 })
-            .then((response) => {
+            .then(() => {
                 commit('setIsLogged', true)
-                commit('setName', response.data.user.name)
-                commit('setEmail', response.data.user.email)
-                commit('setAddress', response.data.user.address)
-                commit('setPhone', response.data.user.phone)
-                commit('setId', response.data.user._id)
             })
             .catch((error) => {
                 commit('setIsLogged', false)
@@ -137,6 +137,41 @@ const actions = {
                 console.log(error.message)
             })
     },
+
+
+    async allUsers({commit}) {
+        await api 
+            .get(`/user/everyone`, {
+                    headers: {
+                    'x-access-token': getCookie("accessToken")
+                    }
+                })
+            .then((response) => {
+                commit('setUsers', response.data)
+            })
+            .catch((error) => {
+                commit('setIsLogged', false)
+                console.log(error.message)
+            })
+    },
+
+
+    async delete({commit}, payload) {
+        await api 
+            .put(`/user/d/delete`,
+            { id : payload._id }, {
+                    headers: {
+                    'x-access-token': getCookie("accessToken")
+                    }
+                })
+            .then((response) => {
+                commit('setUsers', response.data)
+            })
+            .catch((error) => {
+                commit('setIsLogged', false)
+                console.log(error.message)
+            })
+    },
 }
 
 // GETTERS
@@ -158,6 +193,9 @@ const getters = {
     },
     getId(state) {
         return state.user.id
+    },
+    getUsers(state) {
+        return state.users
     },
 }
 
