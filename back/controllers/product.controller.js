@@ -83,10 +83,10 @@ export async function remove(req, res) {
     try {
         const count = await ProductModel.findByIdAndDelete(id);
         if (!count) return res.status(500).send("Product not found");            
-
+        window.alert("Delete successful!");
         return res.status(200).send({message: "Delete succesful"});
     } catch(e) {
-        console.log(e)
+        window.alert(console.log(e));
         return res.status(500).send({'error': 'delete error'});
     }
 };
