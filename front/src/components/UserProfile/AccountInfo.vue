@@ -9,7 +9,7 @@
 					Edit profile information
 				</h4>
 								
-				<form class="needs-validation" novalidate="">
+				<form v-if="isLogged" class="needs-validation" novalidate="">
                 <div class="col-md mb-4">
                     <label for="firstName" class="form-label">Full name</label>
                     <input type="text" class="form-control" v-model="uname" v-bind:placeholder="name" required="">
@@ -45,7 +45,12 @@
 					Save changes
 				</button>
 				
-            </form>
+        </form>
+
+				<p v-else class="stext-102 cl6">
+					Please, <a href="/login">login</a> to access your account information
+				</p>
+
 			</div>
 		</div>
 
@@ -127,6 +132,9 @@ export default {
       phone() {
         return this.$store.getters.getPhone
       },
+      isLogged() {
+        return this.$store.getters.getIsLogged;
+      }
     },
 
     beforeMount(){

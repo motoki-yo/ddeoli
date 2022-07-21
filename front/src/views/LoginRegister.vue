@@ -68,39 +68,6 @@
                         required/>
                     <div class="invalid-feedback lh-condensed"> Please enter your shipping address. </div>
                 </div>
-
-            <!-- <div class="row mb-4">
-
-                <div class="col-md-4 mb-4">
-                  <label for="upCountry" class="form-label">Country</label>
-                    <select v-model="upCountry" class="form-select form-select-lg" required>
-                      <option selected disabled value="">Choose...</option>
-                      <option value="1">Brazil</option>
-                  </select>
-                  <div class="invalid-feedback lh-condensed"> Please select a <br> valid country. </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                  <label for="upState" class="form-label">State</label>
-                    <select v-model="upState" class="form-select form-select-lg" required>
-                        <option selected disabled value="">Choose...</option>
-                        <option v-for="state in brazilStates" :key="state.value" :value="state.value">{{ state.text }}</option>
-                    </select>
-                  <div class="invalid-feedback lh-condensed"> Please select a <br> valid state. </div>
-                </div>
-
-              <div class="col-md mb-4">
-                  <label for="upZipcode">Zip code</label>
-                  <input 
-                    v-model="upZipCode"
-                    type="text" 
-                    class="form-control"
-                    placeholder="" 
-                    required/>
-                  <div class="invalid-feedback lh-condensed"> Zip code required. </div>
-              </div>
-
-            </div> -->
                 
             <hr class="mb-4">
 				
