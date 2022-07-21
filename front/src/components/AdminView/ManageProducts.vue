@@ -305,7 +305,6 @@ export default {
             this.$store.dispatch("deleteProduct", payload)
         },
         deleteProduct() {
-            console.log(this.selectedProduct)
             this.$store.dispatch("deleteProducts", this.selectedProduct).then(() => {
                 window.location.reload();
             });

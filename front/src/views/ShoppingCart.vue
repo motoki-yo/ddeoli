@@ -61,7 +61,7 @@
 
 						<div class="size-209">
 							<span class="mtext-110 cl2">
-								$79.65
+								{{ price }}
 							</span>
 						</div>
 					</div>
@@ -89,7 +89,7 @@
 
 						<div class="size-209 p-t-1">
 							<span class="mtext-110 cl2">
-								$79.65
+								{{ price }}
 							</span>
 						</div>
 					</div>
@@ -141,7 +141,10 @@
 				</div>
                 <hr class="mb-4">
 				
-				<button @click="register" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+				<button type="button" @click="create({newUserEmail : email,
+										newItems : [],
+										newTotalPrice : price,
+										newOrderAddress : newOrderAddress})" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
 					Proceed to checkout
 				</button>
 				
@@ -180,6 +183,7 @@ export default {
 
     setup(){
 		const store = useStore();
+		store.dispatch("changeCartPrice", 0)
 		
 		let cart = computed(function () {
 		return store.state.cart
@@ -193,7 +197,13 @@ export default {
 	computed: {
 		users() {
 			return this.$store.getters.getOrders
-		}
+		},
+		price() {
+			return this.$store.getters.getCartPrice
+		},
+		email() {
+			return this.$store.getters.getEmail
+		},
     },
 	
 	methods:{

@@ -17,20 +17,22 @@ export default createStore({
   state: {
 
     cart : [],
+    cartPrice : 0,
 
     orders: [{}],
   },
   mutations: {
     setCartItem(state, payload) {
-      console.log("oiii")
       state.cart.push(payload)
-      console.log(state.cart)
     },
     remCartItem(state, item) {
         state.cart = state.cart.filter((cartItem) => {
             return cartItem.id != item.id
         })
-    }
+    },
+    setCartPrice(state, value) {
+      state.cartPrice = value
+    },
   },
   actions: {
     async addCartItem({commit}, item){
@@ -38,11 +40,17 @@ export default createStore({
     },
     async removeCartItem({commit}, item){
         commit("remCartItem", item)
-    }
+    },
+    async changeCartPrice({commit}, item){
+        commit("setCartPrice", item);
+    },
   },
   getters: {
     getCart(state) {
         return state.cart
+    },
+    getCartPrice(state) {
+        return state.cartPrice
     },
   }
 })

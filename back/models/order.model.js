@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-    id: {
-        type: String,
-        trim: true,
-        required: true
-      },
     userEmail: {
         type: String,
         trim: true,

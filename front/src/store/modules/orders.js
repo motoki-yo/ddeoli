@@ -32,7 +32,7 @@ const actions = {
             orderAddress:payload.newOrderAddress
             })
             .then(() => {
-                window.alert(console.log("Successful order request! Your items are on the way."))
+                console.log("Successful order request! Your items are on the way.")
             })
             .catch((error) => {
                 commit('setIsLogged', false)
@@ -58,7 +58,7 @@ const actions = {
     },
 
 
-    async deleteOrder({commit}, payload) {
+    async delete({commit}, payload) {
         await api 
             .put(`/order/d/delete`,
             { id : payload._id }, {
