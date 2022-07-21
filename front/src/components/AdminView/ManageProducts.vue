@@ -253,7 +253,6 @@
 </template>
 
 <script>
-import {computed} from 'vue';
 import {useStore} from "vuex";
 
 import { VueFinalModal } from 'vue-final-modal'
@@ -273,7 +272,7 @@ export default {
     },
 
     computed: {
-        products    () {
+        products() {
             return this.$store.getters.getProducts;
         }
     },
