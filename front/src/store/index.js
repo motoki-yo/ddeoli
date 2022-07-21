@@ -126,7 +126,7 @@
 // })
 
 import { createStore } from "vuex";
-// import createPersistedState from "vuex-persistedstate";
+import createPersistedState from "vuex-persistedstate";
 // import SecureLS from "secure-ls";
 
 /* =========== MODULES =========== */
@@ -156,6 +156,7 @@ import user from './modules/user';
 // });
 
 export default createStore({
+  plugins: [createPersistedState()],
   modules: [
     user,
   ],

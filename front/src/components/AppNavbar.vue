@@ -21,8 +21,9 @@
                     <a href="/profile"><span class="icon icon-person"></span></a>
                       <ul class="dropdown">
                         <!-- Add filters later on -->
-                        <li><a href="/profile"><i class="fa-solid fa-id-card"></i> My profile</a></li>
-                        <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                        <li v-if="isLogged"><a v-if="isLogged" href="/profile"><i class="fa-solid fa-id-card"></i> My profile</a></li>
+                        <li v-if="isLogged"><a v-if="isLogged" href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                        <li v-else><a href="/login"><i class="fa-solid fa-id-card"></i> Login / Register</a></li>
                       </ul>
                   </li>
 
@@ -66,6 +67,14 @@
 export default {
   name: 'AppNavbar',
   components: {
+  },
+  created() {
+    this.$store.dispatch("me");
+  },
+  computed: {
+    isLogged() {
+      return this.$store.getters.getIsLogged;
+    }
   }
 }
 </script>

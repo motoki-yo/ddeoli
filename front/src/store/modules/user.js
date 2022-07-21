@@ -117,6 +117,26 @@ const actions = {
             })
     },
 
+    async me({commit}) {
+        await api 
+            .get(`/user/me`, {
+                    headers: {
+                    'x-access-token': getCookie("accessToken")
+                    }
+                })
+            .then((response) => {
+                commit('setIsLogged', true)
+                commit('setName', response.data.name)
+                commit('setEmail', response.data.email)
+                commit('setAddress', response.data.address)
+                commit('setPhone', response.data.phone)
+                commit('setId', response.data._id)
+            })
+            .catch((error) => {
+                commit('setIsLogged', false)
+                console.log(error.message)
+            })
+    },
 }
 
 // GETTERS

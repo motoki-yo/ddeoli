@@ -103,11 +103,10 @@ export async function remove(req, res) {
 };
 
 export async function getUser(req, res) {
-    const id  = req.query.id;
+    const id  = req.user._id;
 
     try {
         const user = await UserModel.findById(id);
-        console.log(id)
         if (!user) return res.status(500).send("User not found");            
 
         return res.status(200).send(user);

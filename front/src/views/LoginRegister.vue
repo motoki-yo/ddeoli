@@ -286,6 +286,7 @@ export default {
             if (!this.$store.getters.getIsLogged) {
                 /* Notificar erro no cadastro */
             } else {
+                this.$router.push("/profile");
                 /* Notificar cadastro com sucesso */
             }
          },

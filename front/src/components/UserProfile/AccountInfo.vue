@@ -109,12 +109,7 @@ export default {
     },
 
     created() {
-      this.user.name = this.$store.getters.getName;
-      this.user.id = this.$store.getters.getId;
-      this.user.email= this.$store.getters.getEmail;
-      this.user.address= this.$store.getters.getAddress;
-      this.user.phone= this.$store.getters.getPhone;
-
+      this.$store.dispatch("me");
     },
     computed: {
       name() {
