@@ -54,7 +54,7 @@
 
 			<!-- PRODUCT GALLERY !-->
 			<div class="row isotope-grid">
-				<ProductSingle v-for="product in products" :product="product" :key="product.id"/>
+				<ProductSingle v-for="product in products" :product="product" :key="product._id"/>
 			</div>
 		</div>
 	</div>
@@ -66,26 +66,21 @@
 import ProductSingle from "../components/ShopAll/ProductSingle.vue";
 
 // import Cart from "../components/Cart.vue";
-import {computed} from 'vue';
-import {useStore} from "vuex";
 
 export default {
 	name: 'ShopAll',
 	
 	components: {
 		ProductSingle,
+	}, 
+	created() {
+		this.$store.dispatch("allProducts")
 	},
-    setup(){
-    const store = useStore();
-	
-	let products = computed(function () {
-      return store.state.products
-    });
-
-    return {
-		products,
-    }
-  }
+	computed: {
+		products() {
+            return this.$store.getters.getProducts;
+		}
+	}
 }
 </script>
 

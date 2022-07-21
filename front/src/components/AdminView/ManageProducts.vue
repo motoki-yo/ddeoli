@@ -312,7 +312,6 @@ export default {
             this.$store.dispatch("deleteProduct", payload)
         },
         update() {
-            console.log("eu vou me matar")
             this.$store.dispatch("updateProduct", this.selectedProduct).then(() => {
                 window.location.reload();
             });

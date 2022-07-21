@@ -12,12 +12,16 @@ function getCookie(name) {
 }
 
 const state = () => ({
-    products: []
+    products: [],
+    product: {}
 })
 
 const mutations = {
     setProducts(state, payload) {
         state.products = payload.product
+    },
+    setProduct(state, payload) {
+        state.product = payload.product
     },
 }
 
@@ -60,6 +64,21 @@ const actions = {
             })
     },
 
+    async findProduct({commit}, payload) {
+        await api 
+            .get(`/product/find/` + payload, {
+                    headers: {
+                    'x-access-token': getCookie("accessToken")
+                    }
+                })
+            .then((response) => {
+                commit('setProduct', response.data)
+            })
+            .catch((error) => {
+                commit('setIsLogged', false)
+                console.log(error.message)
+            })
+    },
 
     async delete({commit}, payload) {
         await api 
@@ -80,7 +99,6 @@ const actions = {
 
 
     async updateProduct({commit}, payload) {
-        console.log(payload)
         await api 
             .put(`/product/`+payload._id, {
                 image: payload.image,
@@ -108,6 +126,9 @@ const actions = {
 const getters = {
     getProducts(state) {
         return state.products
+    },
+    getProduct(state) {
+        return state.product
     },
 }
 

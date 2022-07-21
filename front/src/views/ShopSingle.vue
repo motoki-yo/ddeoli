@@ -9,12 +9,12 @@
 			</a>
 
 			<a href="/shop-all" class="stext-109 cl8 hov-cl1 trans-04">
-				{{ products[this.$route.params.productId-1].collectionType }}
+				{{ product.collectionType }}
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
 
 			<span class="stext-109 cl4">
-				{{ products[this.$route.params.productId-1].name }}
+				{{ product.name }}
 			</span>
 		</div>
 	</div>
@@ -31,7 +31,7 @@
 							<div class="slick3 gallery-lb">
 								<div class="item-slick">
 									<div class="wrap-pic-w pos-relative">
-										<img :src="'../' + products[this.$route.params.productId-1].img"  :alt="products[this.$route.params.productId-1].description">
+										<img :src="'' + product.img"  :alt="product.description">
 									</div>
 								</div>
 							</div>
@@ -42,15 +42,15 @@
 				<div class="col-md-4 col-lg-5 p-b-30">
 					<div class="p-r-50 p-t-5 p-lr-0-lg">
 						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-							{{ products[this.$route.params.productId-1].name }}
+							{{ product.name }}
 						</h4>
 
 						<span class="mtext-106 cl2">
-							${{products[this.$route.params.productId-1].price}}
+							${{product.price}}
 						</span>
 
 						<p class="stext-102 cl3 p-t-23">
-							{{products[this.$route.params.productId-1].description}}
+							{{product.description}}
 						</p>
 						
 						<!--  -->
@@ -62,7 +62,7 @@
 								<label for="sizeSelect" class="form-label">Size</label>
 									<select v-model="sizeSelect" class="form-select form-select-lg" required>
 									<option selected disabled value="">Choose...</option>
-									<option v-for="size in products[this.$route.params.productId-1].sizes" :key="size.value" value="size">{{size}}</option>
+									<option v-for="size in product.sizes" :key="size.value" value="size">{{size}}</option>
 								</select>
 								<div class="invalid-feedback lh-condensed"> Please select a <br> valid size. </div>
 								</div>
@@ -73,10 +73,10 @@
 								<div class="size-204 flex-w flex-m respon6-next">
 									<div class="col-md-6 mb-4">
 									<label for="productQuantity" class="form-label">Quantity</label>
-										<input type="number" class="form-control" id="quantity" name="quantity" min="1" max="5" value="1">
+										<input type="number" v-model="quantitySelect" class="form-control" id="quantity" name="quantity" min="1" max="5" >
 									</div>
 
-									<button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 m-t-40 p-lr-15 trans-04">
+									<button @click="addProductToCart(product, quantitySelect, sizeSelect)" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 m-t-40 p-lr-15 trans-04">
 										Add to cart
 									</button>
 								</div>
@@ -93,22 +93,28 @@
 </template>
 
 <script>
-import {computed} from 'vue';
-import {useStore} from "vuex";
 
 export default {
   name: 'ShopSingle',
-	setup(){
-		const store = useStore();
-
-		let products = computed(function () {
-			return store.state.products
-		});
-
-		return {
-			products,
-		}
+  created() {
+	console.log(this.$store.getters.getCart)
+	this.$store.dispatch("findProduct", this.$route.params.productId)
+  },
+  computed: {
+	product() {
+		return this.$store.getters.getProduct;
 	}
+  },
+  methods: {
+	addProductToCart(item, qty, size) {
+		const payload = {
+			id: item._id,
+			quantity: qty,
+			size: size
+		}
+		this.$store.dispatch("addCartItem", payload)
+	}
+  }
 }
 </script>
 

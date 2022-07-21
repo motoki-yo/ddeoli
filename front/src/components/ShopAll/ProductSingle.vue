@@ -3,14 +3,14 @@
         <!-- Block2 -->
         <div class="block2" :class="product.collectionType">
             <div class="block2-pic hov-img0">
-                <router-link :to='{name: "ShopSingle", params: { productId: product.id }}'>
+                <router-link :to='{name: "ShopSingle", params: { productId: product._id }}'>
                     <img :src="product.img" :alt="product.description">
                 </router-link>
             </div>
 
             <div class="block2-txt flex-w flex-t p-t-14">
                 <div class="block2-txt-child1 flex-col-l ">
-                    <router-link :to='{name: "ShopSingle", params: { productId: product.id }}' class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                    <router-link :to='{name: "ShopSingle", params: { productId: product._id }}' class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                         {{ product.name }}
                     </router-link>
 
