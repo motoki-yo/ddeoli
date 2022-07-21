@@ -35,6 +35,7 @@ const actions = {
                 window.alert(console.log("Successful order request! Your items are on the way."))
             })
             .catch((error) => {
+                commit('setIsLogged', false)
                 window.alert(console.log("Could not place your order. We're sorry. " + error.message))
             })
     },
@@ -69,6 +70,7 @@ const actions = {
                 console.log("Sucesso")
             })
             .catch((error) => {
+                commit('setIsLogged', false)
                 console.log(error.message)
             })
     },
