@@ -52,8 +52,13 @@
 				</div>
 			</div>
 
+			<!-- If no products are registred !-->
+			<tr v-if="!products.length">
+				<td colspan="10" class="text-center">No products</td>
+			</tr>
+
 			<!-- PRODUCT GALLERY !-->
-			<div class="row isotope-grid">
+			<div v-else  class="row isotope-grid">
 				<ProductSingle v-for="product in products" :product="product" :key="product.id"/>
 			</div>
 		</div>
@@ -63,11 +68,12 @@
 </template>
 
 <script>
-import ProductSingle from "../components/ShopAll/ProductSingle.vue";
 
-// import Cart from "../components/Cart.vue";
+
 import {computed} from 'vue';
 import {useStore} from "vuex";
+
+import ProductSingle from "../components/ShopAll/ProductSingle.vue";
 
 export default {
 	name: 'ShopAll',
@@ -78,14 +84,29 @@ export default {
     setup(){
     const store = useStore();
 	
-	let products = computed(function () {
-      return store.state.products
-    });
+	store.dispatch("allProducts")
+	let test = computed(function () {
+	return store.state.test
+	});
 
-    return {
-		products,
+	return {
+		test,
+	}
+  },
+	computed: {
+		products() {
+			return this.$store.getters.getProducts;
+		}
+	},
+
+    data () {
+        return {
+
+        }
+    },
+
+    methods: {
     }
-  }
 }
 </script>
 

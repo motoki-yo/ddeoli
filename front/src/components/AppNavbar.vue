@@ -18,12 +18,13 @@
               <div class="p-2 site-navbar site-top-icons site-navigation text-right">
                 <ul class="site-menu">
                   <li class="has-children">
-                    <a href="/profile"><span class="icon icon-person"></span></a>
-                      <ul class="dropdown">
-                        <!-- Add filters later on -->
-                        <li v-if="isLogged"><a v-if="isLogged" href="/profile"><i class="fa-solid fa-id-card"></i> My profile</a></li>
-                        <li v-if="isLogged"><a v-if="isLogged" href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
-                        <li v-else><a href="/login"><i class="fa-solid fa-id-card"></i> Login / Register</a></li>
+                    <a href="#"><span class="icon icon-person"></span></a>
+                      <ul v-if="isLogged" class="dropdown">
+                        <li><a href="/profile"><i class="fa-solid fa-id-card"></i> My profile</a></li>
+                        <li><a href="/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                      </ul>
+                      <ul v-else class="dropdown">
+                        <li><a href="/login"><i class="fa-solid fa-id-card"></i> Login / Register</a></li>
                       </ul>
                   </li>
 

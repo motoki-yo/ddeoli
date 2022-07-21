@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { now } from "mongoose";
 
 const orderSchema = new mongoose.Schema({
     id: {
@@ -6,22 +6,23 @@ const orderSchema = new mongoose.Schema({
         trim: true,
         required: true
       },
-    dateInvoice: {
-        type: Date,
-      },
     userEmail: {
         type: String,
         trim: true,
         required: true
       },
-    items: {
+      items: [{
         type: String,
-        trim: true,
-      },
+        required: true
+      }],
     totalPrice: {
         type: Number,
         required: true
       },
+    orderAddress:{
+      type: String,
+      required: true
+    },
     created: {
         type: Date,
         default: Date.now

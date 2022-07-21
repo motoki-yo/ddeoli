@@ -131,7 +131,7 @@
 
                 <div class="mb-4">
                     <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
+                    <input v-model="newOrderAddress" type="text" class="form-control" placeholder="1234 Main St" required="">
                     <div class="invalid-feedback lh-condensed"> Please enter your shipping address. </div>
                 </div>
                 
@@ -141,7 +141,7 @@
 				</div>
                 <hr class="mb-4">
 				
-				<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" type="submit">
+				<button @click="register" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
 					Proceed to checkout
 				</button>
 				
@@ -162,8 +162,20 @@ import {useStore} from "vuex";
 
 export default {
 	name: 'ShoppingCart',
+	// props : ['order'],
+
 	components: {
 		CartItem,
+	},
+	
+	data(){
+		return{
+			/* Order variables */
+			newUserEmail: this.$store.getters.getEmail,
+			newItems:"",
+			newTotalPrice:"",
+			newOrderAddress:"",
+		}
 	},
 
     setup(){
@@ -177,6 +189,12 @@ export default {
 			cart,
 		}
 	},
+
+	computed: {
+		users() {
+			return this.$store.getters.getOrders
+		}
+    },
 	
 	methods:{
 		formValidation: function () { // Disable form submissions if there are invalid fields
@@ -196,7 +214,22 @@ export default {
 				}, false)
 			})
 			}, false)
-		}
+		},
+		
+        create(payload) {
+            this.$store.dispatch("registerOrder", payload)
+        },
+
+		async register() {
+
+            await this.$store.dispatch("register", {
+                name: this.upName,
+                email: this.upEmail,
+                password: this.upPassword,
+                address: this.upAddress,
+                phone: this.upPhone,
+            });
+        },
 	},
 
 	beforeMount(){

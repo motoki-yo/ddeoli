@@ -161,7 +161,7 @@
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
                             <div class="modal-footer modal__action">
-                                <button @click="deleteUser" class="btn btn-success" type="button">Delete</button>
+                                <button @click="deleteUser; showDeleteUserModal = false" class="btn btn-success" type="button">Delete</button>
                                 <button @click="showDeleteUserModal = false" class="btn btn-default">Cancel</button>
                             </div>
                     </form>

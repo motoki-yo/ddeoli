@@ -240,7 +240,7 @@
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
                             <div class="modal-footer modal__action">
-                                <button @click="remove(product)" class="btn btn-success">Delete</button>
+                                <button @click="deleteUser; showDeleteProductModal = false" class="btn btn-success">Delete</button>
                                 <button @click="showDeleteProductModal = false" class="btn btn-default">Cancel</button>
                             </div>
                     </form>
@@ -261,6 +261,7 @@ import { VueFinalModal } from 'vue-final-modal'
 
 export default {
     name:'ManageProducts',
+    props : ['product'],
 
     components: {
         VueFinalModal,
@@ -268,18 +269,11 @@ export default {
 
     setup(){
         const store = useStore();
-        
         store.dispatch("allProducts")
-        let test = computed(function () {
-        return store.state.test
-        });
-
-        return {
-            test,
-        }
     },
+
     computed: {
-        products() {
+        products    () {
             return this.$store.getters.getProducts;
         }
     },
@@ -310,6 +304,9 @@ export default {
         },
         remove(payload) {
             this.$store.dispatch("deleteProduct", payload)
+        },
+        deleteProduct() {
+            this.$store.dispatch("delete", this.selectedProduct)
         },
         update() {
             console.log("eu vou me matar")

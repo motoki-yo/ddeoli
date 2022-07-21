@@ -8,12 +8,18 @@
 				<h4 class="mtext-105 cl2 txt-left">
 					Order history
 				</h4>
-                <h4 class="mtext-101 cl2 txt-left p-b-30">
-                    1 order found
+
+                <!-- isLogged && !orders.lenght !-->
+                <div v-if = "isLogged" class="how-pos2 p-lr-15-md">
+                    <p class="stext-102 cl6">Your order history is empty</p>
+                </div>
+
+                <h4 v-if = "isLogged" class="mtext-101 cl2 txt-left p-b-30">
+                    1 order(s) found
 				</h4>
 
                  <!-------- ORDER ITEM !-------->
-                <div class="row m-b-15 bor10 align-items-center">
+                <div v-if="isLogged" class="row m-b-15 bor10 align-items-center">
                     <div class="col m-t-20 m-lr-20 p-t-20 p-b-20">
                         <h3 class="mtext-105 cl2 txt-left">
                             Order #1
@@ -35,10 +41,13 @@
                     </div>
                 </div>
 
+				<p v-else class="stext-102 cl6 p-t-30">
+					Please, <a href="/login">login</a> to track your orders
+				</p>
 
-                <div class="how-pos2 p-lr-15-md">
-                    <p class="stext-102 cl6">Your order history is empty</p>
-                </div>
+
+
+                
 
                 <!-- Order details modal -->
                 <vue-final-modal v-model="showOrderModal" :lock-scroll="false" classes="modal-container " name="deletUser">   
@@ -154,6 +163,11 @@ export default {
         return {
             showOrderModal: false,
         }
+    },
+    computed: {
+      isLogged() {
+        return this.$store.getters.getIsLogged;
+      }
     },
 }
 </script>

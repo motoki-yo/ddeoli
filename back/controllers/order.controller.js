@@ -1,13 +1,13 @@
 import OrderModel from '../models/order.model.js';
 
 export async function register(req, res) {
-    const { dateInvoice, userEmail,  items, totalPrice} = req.body;
+    const { userEmail, items, totalPrice, orderAddress} = req.body;
     try {
         let newOrder = new OrderModel({
-            dateInvoice : dateInvoice,
             userEmail : userEmail,
             items : items,
             totalPrice : totalPrice,
+            orderAddress: orderAddress
         });
 
         const createdOrder = newOrder.save()
@@ -16,7 +16,20 @@ export async function register(req, res) {
         }
     } catch(e) {
         console.log(e)
-        return res.status(500).send({'error': 'register error'});
+        return res.status(500).send({'error': 'order register error'});
+    }
+};
+
+// load all orders by user id
+export async function getAllOrders(req, res) {
+    try {
+        const orders = await OrderModel.find({});
+        if (!orders) return res.status(500).send("orders not found");            
+
+        return res.status(200).send(orders);
+    } catch(e) {
+        console.log(e)
+        return res.status(500).send({'error': 'find error'});
     }
 };
 
@@ -31,29 +44,20 @@ export async function getOrder(req, res) {
         return res.status(200).send({order});
     } catch(e) {
         console.log(e)
-        return res.status(500).send({'error': 'get error'});
+        return res.status(500).send({'error': 'order get error'});
     }
 };
 
-/* Não vamos implementar UPDATE, só deletar o Pedido mesmo. Comprou errado faz de novo, querido. */
-// export async function update(req, res) {
-//     const { name, description, collection, price, qtyInInventory } = req.body;
-//     const id = req.params.id;
+export async function remove(req, res) {
+    const { _id } = req.body;
 
-//     try {
-//         const order = await OrderModel.findById(id);
-//         if (!order) return res.status(500).send("Product not found");            
+    try {
+        const count = await OrderModel.findByIdAndDelete(id);
+        if (!count) return res.status(500).send("Order not found");            
 
-//         order.name = name && name.trim() !== "" ? name : order.name;
-//         order.description = description && description.trim() !== "" ? description : order.description;
-//         order.collection = collection && collection.trim() !== "" ? collection : order.collection;
-//         order.price = price && price.trim() !== "" ? price : order.price;
-//         order.qtyInInventory = qtyInInventory && qtyInInventory.trim() !== "" ? qtyInInventory : order.qtyInInventory;
-
-//         const updatedProduct = await order.save();
-//         return res.status(200).send({updatedProduct});
-//     } catch(e) {
-//         console.log(e)
-//         return res.status(500).send({'error': 'update error'});
-//     }
-// };
+        return res.status(200).send({message: "Delete succesful"});
+    } catch(e) {
+        console.log(e)
+        return res.status(500).send({'error': 'delete error'});
+    }
+};
